@@ -160,32 +160,6 @@
 
     </main>
 
-    <section class="study-list">
-        <h2>📌 My Study List</h2>
-        <p id="list-empty">No subjects bookmarked yet. Tap "Add to Study List" on cards above.</p>
-        <ul id="study-list-items"></ul>
-    </section>
-
-    <section class="quiz-section">
-        <h2>🧠 Quick Quiz (Practice)</h2>
-        <p id="quiz-status">Choose topic and start quiz.</p>
-        <div class="quiz-control">
-            <select id="quiz-topic">
-                <option value="ds">Data Structure</option>
-                <option value="dbms">DBMS</option>
-                <option value="se">Software Engineering</option>
-                <option value="os">Operating System</option>
-            </select>
-            <button id="start-quiz">Start Quiz</button>
-        </div>
-        <div id="quiz-card" class="quiz-card" style="display: none;">
-            <p id="quiz-question"></p>
-            <div id="quiz-options"></div>
-            <p id="quiz-score"></p>
-            <button id="next-question">Next</button>
-        </div>
-    </section>
-
     <footer class="site-footer">
         <p>Designed for BSc CS 2nd year students (Pune University) — syllabus and resources update 2026.</p>
     </footer>
@@ -194,8 +168,6 @@
         const categoryButtons = document.querySelectorAll('.categories button');
         const cards = document.querySelectorAll('.book-card');
         const searchInput = document.getElementById('search-input');
-        const listEmpty = document.getElementById('list-empty');
-        const listItems = document.getElementById('study-list-items');
 
         let currentCategory = 'all';
         let searchQuery = '';
@@ -208,38 +180,6 @@
                 const matchesSearch = !searchQuery || subject.includes(searchQuery);
                 card.style.display = (matchesCategory && matchesSearch) ? 'block' : 'none';
             });
-        }
-
-        function loadStudyList() {
-            const list = JSON.parse(localStorage.getItem('studyList') || '[]');
-            listItems.textContent = '';
-            if (!list.length) {
-                listEmpty.style.display = 'block';
-                return;
-            }
-            listEmpty.style.display = 'none';
-            list.forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'study-list-item';
-                li.innerHTML = `${item} <button class="remove-btn" data-subject="${item}">Remove</button>`;
-                listItems.appendChild(li);
-            });
-        }
-
-        function addToStudyList(subject) {
-            const list = JSON.parse(localStorage.getItem('studyList') || '[]');
-            if (!list.includes(subject)) {
-                list.push(subject);
-                localStorage.setItem('studyList', JSON.stringify(list));
-                loadStudyList();
-            }
-        }
-
-        function removeFromStudyList(subject) {
-            let list = JSON.parse(localStorage.getItem('studyList') || '[]');
-            list = list.filter(item => item !== subject);
-            localStorage.setItem('studyList', JSON.stringify(list));
-            loadStudyList();
         }
 
         categoryButtons.forEach(button => {
@@ -256,102 +196,7 @@
             applyFilters();
         });
 
-        cards.forEach(card => {
-            const subjectName = card.querySelector('h3').textContent;
-            const bookmarkButton = document.createElement('button');
-            bookmarkButton.className = 'bookmark-btn';
-            bookmarkButton.textContent = 'Add to Study List';
-            bookmarkButton.setAttribute('data-subject', subjectName);
-            card.appendChild(bookmarkButton);
-        });
-
-        document.body.addEventListener('click', event => {
-            if (event.target.matches('.bookmark-btn')) {
-                addToStudyList(event.target.dataset.subject);
-            } else if (event.target.matches('.remove-btn')) {
-                removeFromStudyList(event.target.dataset.subject);
-            }
-        });
-
         document.querySelector('.categories button[data-category="all"]').click();
-        loadStudyList();
-
-        const quizData = {
-            ds: [
-                { question: 'Which DS allows O(1) index access?', options: ['Linked List', 'Array', 'Tree', 'Graph'], answer: 1 },
-                { question: 'Stack follows:', options: ['FIFO', 'LIFO', 'Random', 'Priority'], answer: 1 }
-            ],
-            dbms: [
-                { question: '1NF requires:', options: ['Atomic values', 'Partial dependency', 'No duplicates', 'Transitive dependency'], answer: 0 },
-                { question: 'ACID stands for:', options: ['Atomicity, Consistency, Isolation, Durability', 'Access, Control, Indexing, Data', 'Arrays, Constants, Integers, Data', 'All of above'], answer: 0 }
-            ],
-            se: [
-                { question: 'SDLC stands for:', options: ['System Development Life Cycle', 'Software Design Logic Chart', 'System Data Link Code', 'None'], answer: 0 },
-                { question: 'V-Model is based on:', options: ['Waterfall', 'Iterative', 'Spiral', 'Agile'], answer: 0 }
-            ],
-            os: [
-                { question: 'Which is a deadlock prevention technique?', options: ['Banker algorithm', 'First Fit', 'LRU', 'Depth-first search'], answer: 0 },
-                { question: 'Paging avoids:', options: ['External fragmentation', 'Internal fragmentation', 'Both', 'None'], answer: 0 }
-            ]
-        };
-
-        const quizTopic = document.getElementById('quiz-topic');
-        const startQuizBtn = document.getElementById('start-quiz');
-        const quizCard = document.getElementById('quiz-card');
-        const quizQuestion = document.getElementById('quiz-question');
-        const quizOptions = document.getElementById('quiz-options');
-        const quizScoreEl = document.getElementById('quiz-score');
-        const quizStatus = document.getElementById('quiz-status');
-        const nextQuizBtn = document.getElementById('next-question');
-
-        let currentQuiz = [];
-        let currentIndex = 0;
-        let score = 0;
-
-        function showQuizQn() {
-            if (currentIndex >= currentQuiz.length) {
-                quizStatus.textContent = `Quiz Complete! Score: ${score}/${currentQuiz.length}`;
-                quizCard.style.display = 'none';
-                return;
-            }
-            const item = currentQuiz[currentIndex];
-            quizQuestion.textContent = item.question;
-            quizOptions.innerHTML = '';
-            item.options.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.className = 'quiz-option';
-                btn.textContent = opt;
-                btn.dataset.index = idx;
-                quizOptions.appendChild(btn);
-            });
-            quizScoreEl.textContent = `Progress: ${currentIndex + 1}/${currentQuiz.length} | Score: ${score}`;
-        }
-
-        function startQuiz() {
-            const topic = quizTopic.value;
-            currentQuiz = quizData[topic].slice();
-            currentIndex = 0;
-            score = 0;
-            quizStatus.textContent = `Quiz started (${topic}), select an answer.`;
-            quizCard.style.display = 'block';
-            showQuizQn();
-        }
-
-        quizOptions.addEventListener('click', event => {
-            if (!event.target.matches('.quiz-option')) return;
-            const selected = Number(event.target.dataset.index);
-            const correct = currentQuiz[currentIndex].answer;
-            if (selected === correct) {
-                score += 1;
-                quizStatus.textContent = 'Correct!';
-            } else {
-                quizStatus.textContent = `Wrong. Correct: ${currentQuiz[currentIndex].options[correct]}`;
-            }
-            currentIndex++;
-            setTimeout(showQuizQn, 700);
-        });
-
-        startQuizBtn.addEventListener('click', startQuiz);
 
     </script>
 
