@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="logo">Pune University BSc CS 2nd Year</div>
+        <div class="tagline">Modern Library with syllabus & resources</div>
+    </nav>
+
+    <main>
+
+    <!-- HOME SECTION -->
+    <section class="home">
+        <h1>📚 Online Access Library</h1>
+        <p>Read and explore books anytime, anywhere - specially tailored for BSc CS Pune University second year.</p>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+        <button data-category="all">All</button>
+        <button data-category="computer-science">Computer Science</button>
+        <button data-category="history">History</button>
+        <button data-category="science">Science</button>
+    </section>
+
+    <section class="search-bar">
+        <input id="search-input" type="text" placeholder="🔍 Search by subject or topic..." aria-label="Search subjects">
+    </section>
+
+    <!-- COMPUTER SCIENCE -->
+    <h2>💻 Computer Science</h2>
+    <div class="book-container" id="computer-science">
+        
+
+        <div class="book-card" data-category="computer-science">
+            <h3>Data Structure</h3>
+            <p>Syllabus/snippets for Pune University:</p>
+            <ul>
+                <li>Arrays, Linked List, Stack, Queue, Tree, Graph</li>
+                <li>Algorithm analysis, Search, Sorting, Recursion</li>
+                <li>Study resources: GeeksforGeeks DS notes, CLRS (chapters 10-14)</li>
+            </ul>
+            <a class="read-link" href="ds.html" aria-label="Read Data Structure book">Open</a>
+        </div>
+
+        <div class="book-card" data-category="computer-science">
+            <h3>DBMS</h3>
+            <p>SQL, Transactions, Normalization</p>
+            <ul>
+                <li>ER modeling, Relational algebra, SQL queries</li>
+                <li>Normal forms, Concurrency control, Recovery</li>
+                <li>Study resources: `Database System Concepts` (Korth), DBMS lab</li>
+            </ul>
+            <a class="read-link" href="dbms.html" aria-label="DBMS resources">Open</a>
+        </div>
+
+        <div class="book-card" data-category="computer-science">
+            <h3>Software Engineering</h3>
+            <p>SDLC, Testing, Models</p>
+            <ul>
+                <li>Requirements engineering, UML, design patterns</li>
+                <li>Agile, Waterfall, V-model, Quality assurance</li>
+                <li>Study resources: Ian Sommerville, Pune Univ notes</li>
+            </ul>
+            <a class="read-link" href="se.html" aria-label="Software Engineering resources">Open</a>
+        </div>
+
+        <div class="book-card" data-category="computer-science">
+            <h3>Operating System</h3>
+            <p>Process, Memory, Scheduling</p>
+            <ul>
+                <li>Process management, Threads, Scheduling algorithms</li>
+                <li>Memory management, Paging, Virtual memory</li>
+                <li>Study materials: OS Concepts (Silberschatz) & lab manuals</li>
+            </ul>
+            <a class="read-link" href="os.html" aria-label="Operating System resources">Open</a>
+        </div>
+
+    </div>
+
+    <!-- HISTORY -->
+    <h2>🏛️ History</h2>
+    <div class="book-container" id="history">
+
+        <div class="book-card" data-category="history">
+            <h3>Indian History</h3>
+            <p>Ancient to Modern India</p>
+            <ul>
+                <li>Harappan civilization, Vedic age, Maurya/Gupta empires</li>
+                <li>Medieval dynasties, Mughal era, Colonial period</li>
+                <li>Study resources: NCERT History, Pune University notes</li>
+            </ul>
+            <a class="read-link" href="#" aria-label="Indian History resources">Open</a>
+        </div>
+
+        <div class="book-card" data-category="history">
+            <h3>World History</h3>
+            <p>Major global events</p>
+            <ul>
+                <li>Renaissance, Industrial Revolution, World Wars</li>
+                <li>Cold War, Decolonization, Globalization</li>
+                <li>Study resources: World history text, podcasts</li>
+            </ul>
+            <a class="read-link" href="#" aria-label="World History resources">Open</a>
+        </div>
+
+        <div class="book-card" data-category="history">
+            <h3>Freedom Fighters</h3>
+            <p>Leaders of Independence</p>
+            <ul>
+                <li>Gandhi, Nehru, Subhash Chandra Bose, Bhagat Singh</li>
+                <li>Regional leaders, revolutionary movements</li>
+                <li>Study resources: biographies, lecture notes</li>
+            </ul>
+            <a class="read-link" href="#" aria-label="Freedom Fighters resources">Open</a>
+        </div>
+
+    </div>
+
+    <!-- SCIENCE -->
+    <h2>🔬 Science</h2>
+    <div class="book-container" id="science">
+
+        <div class="book-card" data-category="science">
+            <h3>Physics</h3>
+            <p>Motion, Energy, Laws</p>
+            <ul>
+                <li>Mechanics, Waves, Optics, Thermodynamics</li>
+                <li>Study resources: NCERT + practical manuals</li>
+            </ul>
+            <a class="read-link" href="#" aria-label="Physics resources">Open</a>
+        </div>
+
+        <div class="book-card" data-category="science">
+            <h3>Chemistry</h3>
+            <p>Atoms, Reactions</p>
+            <ul>
+                <li>Inorganic, Organic, Physical chemistry topics</li>
+                <li>Study resources: NCERT + lab notes</li>
+            </ul>
+            <a class="read-link" href="#" aria-label="Chemistry resources">Open</a>
+        </div>
+
+        <div class="book-card" data-category="science">
+            <h3>Biology</h3>
+            <p>Human body, Plants</p>
+            <ul>
+                <li>Cell biology, Genetics, Ecology, Physiology</li>
+                <li>Study resources: NCERT + reference books</li>
+            </ul>
+            <a class="read-link" href="#" aria-label="Biology resources">Open</a>
+        </div>
+
+    </div>
+
+    </main>
+
+    <section class="study-list">
+        <h2>📌 My Study List</h2>
+        <p id="list-empty">No subjects bookmarked yet. Tap "Add to Study List" on cards above.</p>
+        <ul id="study-list-items"></ul>
+    </section>
+
+    <section class="quiz-section">
+        <h2>🧠 Quick Quiz (Practice)</h2>
+        <p id="quiz-status">Choose topic and start quiz.</p>
+        <div class="quiz-control">
+            <select id="quiz-topic">
+                <option value="ds">Data Structure</option>
+                <option value="dbms">DBMS</option>
+                <option value="se">Software Engineering</option>
+                <option value="os">Operating System</option>
+            </select>
+            <button id="start-quiz">Start Quiz</button>
+        </div>
+        <div id="quiz-card" class="quiz-card" style="display: none;">
+            <p id="quiz-question"></p>
+            <div id="quiz-options"></div>
+            <p id="quiz-score"></p>
+            <button id="next-question">Next</button>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>Designed for BSc CS 2nd year students (Pune University) — syllabus and resources update 2026.</p>
+    </footer>
+
+    <script>
+        const categoryButtons = document.querySelectorAll('.categories button');
+        const cards = document.querySelectorAll('.book-card');
+        const searchInput = document.getElementById('search-input');
+        const listEmpty = document.getElementById('list-empty');
+        const listItems = document.getElementById('study-list-items');
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function applyFilters() {
+            cards.forEach(card => {
+                const subject = card.querySelector('h3').textContent.toLowerCase();
+                const category = card.dataset.category;
+                const matchesCategory = currentCategory === 'all' || category === currentCategory;
+                const matchesSearch = !searchQuery || subject.includes(searchQuery);
+                card.style.display = (matchesCategory && matchesSearch) ? 'block' : 'none';
+            });
+        }
+
+        function loadStudyList() {
+            const list = JSON.parse(localStorage.getItem('studyList') || '[]');
+            listItems.textContent = '';
+            if (!list.length) {
+                listEmpty.style.display = 'block';
+                return;
+            }
+            listEmpty.style.display = 'none';
+            list.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'study-list-item';
+                li.innerHTML = `${item} <button class="remove-btn" data-subject="${item}">Remove</button>`;
+                listItems.appendChild(li);
+            });
+        }
+
+        function addToStudyList(subject) {
+            const list = JSON.parse(localStorage.getItem('studyList') || '[]');
+            if (!list.includes(subject)) {
+                list.push(subject);
+                localStorage.setItem('studyList', JSON.stringify(list));
+                loadStudyList();
+            }
+        }
+
+        function removeFromStudyList(subject) {
+            let list = JSON.parse(localStorage.getItem('studyList') || '[]');
+            list = list.filter(item => item !== subject);
+            localStorage.setItem('studyList', JSON.stringify(list));
+            loadStudyList();
+        }
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                currentCategory = button.dataset.category;
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener('input', () => {
+            searchQuery = searchInput.value.trim().toLowerCase();
+            applyFilters();
+        });
+
+        cards.forEach(card => {
+            const subjectName = card.querySelector('h3').textContent;
+            const bookmarkButton = document.createElement('button');
+            bookmarkButton.className = 'bookmark-btn';
+            bookmarkButton.textContent = 'Add to Study List';
+            bookmarkButton.setAttribute('data-subject', subjectName);
+            card.appendChild(bookmarkButton);
+        });
+
+        document.body.addEventListener('click', event => {
+            if (event.target.matches('.bookmark-btn')) {
+                addToStudyList(event.target.dataset.subject);
+            } else if (event.target.matches('.remove-btn')) {
+                removeFromStudyList(event.target.dataset.subject);
+            }
+        });
+
+        document.querySelector('.categories button[data-category="all"]').click();
+        loadStudyList();
+
+        const quizData = {
+            ds: [
+                { question: 'Which DS allows O(1) index access?', options: ['Linked List', 'Array', 'Tree', 'Graph'], answer: 1 },
+                { question: 'Stack follows:', options: ['FIFO', 'LIFO', 'Random', 'Priority'], answer: 1 }
+            ],
+            dbms: [
+                { question: '1NF requires:', options: ['Atomic values', 'Partial dependency', 'No duplicates', 'Transitive dependency'], answer: 0 },
+                { question: 'ACID stands for:', options: ['Atomicity, Consistency, Isolation, Durability', 'Access, Control, Indexing, Data', 'Arrays, Constants, Integers, Data', 'All of above'], answer: 0 }
+            ],
+            se: [
+                { question: 'SDLC stands for:', options: ['System Development Life Cycle', 'Software Design Logic Chart', 'System Data Link Code', 'None'], answer: 0 },
+                { question: 'V-Model is based on:', options: ['Waterfall', 'Iterative', 'Spiral', 'Agile'], answer: 0 }
+            ],
+            os: [
+                { question: 'Which is a deadlock prevention technique?', options: ['Banker algorithm', 'First Fit', 'LRU', 'Depth-first search'], answer: 0 },
+                { question: 'Paging avoids:', options: ['External fragmentation', 'Internal fragmentation', 'Both', 'None'], answer: 0 }
+            ]
+        };
+
+        const quizTopic = document.getElementById('quiz-topic');
+        const startQuizBtn = document.getElementById('start-quiz');
+        const quizCard = document.getElementById('quiz-card');
+        const quizQuestion = document.getElementById('quiz-question');
+        const quizOptions = document.getElementById('quiz-options');
+        const quizScoreEl = document.getElementById('quiz-score');
+        const quizStatus = document.getElementById('quiz-status');
+        const nextQuizBtn = document.getElementById('next-question');
+
+        let currentQuiz = [];
+        let currentIndex = 0;
+        let score = 0;
+
+        function showQuizQn() {
+            if (currentIndex >= currentQuiz.length) {
+                quizStatus.textContent = `Quiz Complete! Score: ${score}/${currentQuiz.length}`;
+                quizCard.style.display = 'none';
+                return;
+            }
+            const item = currentQuiz[currentIndex];
+            quizQuestion.textContent = item.question;
+            quizOptions.innerHTML = '';
+            item.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = opt;
+                btn.dataset.index = idx;
+                quizOptions.appendChild(btn);
+            });
+            quizScoreEl.textContent = `Progress: ${currentIndex + 1}/${currentQuiz.length} | Score: ${score}`;
+        }
+
+        function startQuiz() {
+            const topic = quizTopic.value;
+            currentQuiz = quizData[topic].slice();
+            currentIndex = 0;
+            score = 0;
+            quizStatus.textContent = `Quiz started (${topic}), select an answer.`;
+            quizCard.style.display = 'block';
+            showQuizQn();
+        }
+
+        quizOptions.addEventListener('click', event => {
+            if (!event.target.matches('.quiz-option')) return;
+            const selected = Number(event.target.dataset.index);
+            const correct = currentQuiz[currentIndex].answer;
+            if (selected === correct) {
+                score += 1;
+                quizStatus.textContent = 'Correct!';
+            } else {
+                quizStatus.textContent = `Wrong. Correct: ${currentQuiz[currentIndex].options[correct]}`;
+            }
+            currentIndex++;
+            setTimeout(showQuizQn, 700);
+        });
+
+        startQuizBtn.addEventListener('click', startQuiz);
+
+    </script>
+
+</body>
+</html>
