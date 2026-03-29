@@ -23,13 +23,30 @@
     </section>
 
     <section class="study-material">
-        <h2>Study Material Resources</h2>
+        <h2>📚 Recommended Textbooks</h2>
+        <div class="book-details">
+            <h3>"Database System Concepts" by Abraham Silberschatz, Henry F. Korth, S. Sudarshan</h3>
+            <p><strong>Edition:</strong> 7th Edition (most recent)</p>
+            <p><strong>Chapters for syllabus:</strong> 1-3, 6-8, 10-12, 14-16, 17-19</p>
+            <p><strong>Key features:</strong> Comprehensive coverage, real-world examples, excellent for theory</p>
+
+            <h3>"Fundamentals of Database Systems" by Ramez Elmasri, Shamkant B. Navathe</h3>
+            <p><strong>Edition:</strong> 7th Edition</p>
+            <p><strong>Best for:</strong> ER modeling, normalization, SQL practical examples</p>
+            <p><strong>Strength:</strong> Step-by-step explanations, case studies</p>
+
+            <h3>"Database Management Systems" by Raghu Ramakrishnan, Johannes Gehrke</h3>
+            <p><strong>Focus:</strong> Query optimization, transaction management, advanced concepts</p>
+            <p><strong>Level:</strong> Advanced undergraduate level</p>
+        </div>
+
+        <h2>🛠️ Practical Resources</h2>
         <ul>
-            <li>Textbook: "Database System Concepts" by Korth & Silberschatz</li>
-            <li>Textbook: "Fundamentals of Database Systems" by Elmasri & Navathe</li>
-            <li>Pune University DBMS lecture notes and previous year papers</li>
-            <li>Online: TutorialsPoint DBMS, GeeksforGeeks SQL and DBMS guides</li>
-            <li>Practice: SQLZoo, LeetCode Database problems, HackerRank SQL tasks</li>
+            <li><strong>MySQL/PostgreSQL:</strong> Free database software for practice</li>
+            <li><strong>SQLZoo:</strong> Interactive SQL learning platform</li>
+            <li><strong>LeetCode Database:</strong> SQL query problems</li>
+            <li><strong>DBMS Lab Manual:</strong> Pune University practical assignments</li>
+            <li><strong>phpMyAdmin:</strong> Web-based database administration</li>
         </ul>
     </section>
 
@@ -45,11 +62,70 @@
     </section>
 
     <section class="topic-explanations">
-        <h2>Topic-wise Explanation</h2>
-        <h3>Relational Algebra</h3>
-        <p>Relational algebra is a procedural query language using operators like select, project, join, union, intersect and difference. Pune University emphasizes practice problems on joining student and course tables.</p>
-        <h3>Normalization</h3>
-        <p>Normalization avoids redundancy; understanding 1NF, 2NF, 3NF, BCNF with examples is critical for exams. Practice decomposition of table schemas into normalized forms.</p>
+        <h2>📖 Detailed Chapter Breakdown</h2>
+
+        <h3>Chapter 1-2: Introduction & ER Model</h3>
+        <div class="chapter-content">
+            <p><strong>Key Concepts:</strong> Data models, schemas, instances, ER diagrams, entities, attributes, relationships</p>
+            <p><strong>Cardinality:</strong> 1:1, 1:N, M:N relationships with examples</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Draw ER diagram for library management system</li>
+                <li>Convert ER to relational schema</li>
+                <li>Identify weak entities and generalization</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 3-4: Relational Model & SQL</h3>
+        <div class="chapter-content">
+            <p><strong>Relational Algebra:</strong> Select, Project, Join, Union, Intersection, Difference</p>
+            <p><strong>SQL Commands:</strong> DDL (CREATE, ALTER, DROP), DML (INSERT, UPDATE, DELETE), DQL (SELECT)</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Write SQL queries for complex joins</li>
+                <li>Create database schema for university system</li>
+                <li>Implement nested queries and subqueries</li>
+                <li>Practice aggregate functions and GROUP BY</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 5-6: Normalization</h3>
+        <div class="chapter-content">
+            <p><strong>Normal Forms:</strong> 1NF, 2NF, 3NF, BCNF, 4NF, 5NF</p>
+            <p><strong>Functional Dependencies:</strong> Partial, transitive, multivalued dependencies</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Decompose tables to BCNF</li>
+                <li>Identify normalization violations</li>
+                <li>Lossless join decomposition</li>
+                <li>Dependency preservation</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 7-8: Transaction Management</h3>
+        <div class="chapter-content">
+            <p><strong>ACID Properties:</strong> Atomicity, Consistency, Isolation, Durability</p>
+            <p><strong>Concurrency Control:</strong> 2PL, Timestamp ordering, Optimistic protocols</p>
+            <p><strong>Recovery:</strong> Log-based recovery, ARIES algorithm</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Schedule serializability analysis</li>
+                <li>Deadlock detection and prevention</li>
+                <li>Log file analysis for recovery</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 9-10: Indexing & Query Processing</h3>
+        <div class="chapter-content">
+            <p><strong>Indexing:</strong> B-Tree, B+-Tree, Hash indexing</p>
+            <p><strong>Query Optimization:</strong> Cost estimation, query plans, join algorithms</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Compare different indexing techniques</li>
+                <li>Analyze query execution plans</li>
+                <li>Optimize slow queries</li>
+            </ul>
+        </div>
     </section>
 
     <footer class="site-footer">

@@ -23,12 +23,30 @@
     </section>
 
     <section class="study-material">
-        <h2>Study Material Resources</h2>
+        <h2>📚 Recommended Textbooks</h2>
+        <div class="book-details">
+            <h3>"Operating System Concepts" by Abraham Silberschatz, Peter B. Galvin, Greg Gagne</h3>
+            <p><strong>Edition:</strong> 10th Edition</p>
+            <p><strong>Chapters for syllabus:</strong> 1-3, 5-6, 8-10, 12-13, 15-16</p>
+            <p><strong>Key features:</strong> Comprehensive coverage, excellent diagrams, practical examples</p>
+
+            <h3>"Modern Operating Systems" by Andrew S. Tanenbaum, Herbert Bos</h3>
+            <p><strong>Edition:</strong> 5th Edition</p>
+            <p><strong>Best for:</strong> Real-world examples, Linux/Windows case studies</p>
+            <p><strong>Strength:</strong> Clear explanations, modern OS concepts</p>
+
+            <h3>"Operating Systems: Internals and Design Principles" by William Stallings</h3>
+            <p><strong>Focus:</strong> Design principles, internal mechanisms</p>
+            <p><strong>Level:</strong> Detailed technical depth</p>
+        </div>
+
+        <h2>🛠️ Practical Resources</h2>
         <ul>
-            <li>Textbook: "Operating System Concepts" by Silberschatz</li>
-            <li>Textbook: "Modern Operating Systems" by Tanenbaum</li>
-            <li>C programming lab exercises and OS lab notes</li>
-            <li>Online: GeeksforGeeks OS tutorials, practice OS problems</li>
+            <li><strong>Linux Terminal:</strong> Practice commands and process management</li>
+            <li><strong>Online Simulators:</strong> OS scheduling and memory management simulators</li>
+            <li><strong>GDB Debugger:</strong> Debug C programs and understand process execution</li>
+            <li><strong>OS Lab Manual:</strong> Pune University practical assignments</li>
+            <li><strong>Virtual Machines:</strong> VMware/VirtualBox for OS experimentation</li>
         </ul>
     </section>
 
@@ -43,11 +61,83 @@
     </section>
 
     <section class="topic-explanations">
-        <h2>Topic-wise Explanation</h2>
-        <h3>Process Synchronization</h3>
-        <p>Understand critical section, mutex, semaphore, monitors, and algorithms like Peterson's. Practice solving classical synchronization problems.</p>
-        <h3>Memory Management</h3>
-        <p>Learn paging, segmentation, TLB, page replacement algorithms (FIFO, LRU, Optimal). Pune University exam often asks to compute page faults.</p>
+        <h2>📖 Detailed Chapter Breakdown</h2>
+
+        <h3>Chapter 1-2: Introduction & Processes</h3>
+        <div class="chapter-content">
+            <p><strong>Process Concepts:</strong> Process vs Program, Process states, PCB, Context switching</p>
+            <p><strong>Process Operations:</strong> Create, terminate, suspend, resume</p>
+            <p><strong>Threads:</strong> User threads, kernel threads, multithreading models</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Draw process state diagrams</li>
+                <li>Calculate context switching overhead</li>
+                <li>Implement thread creation in C</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 3-4: CPU Scheduling</h3>
+        <div class="chapter-content">
+            <p><strong>Algorithms:</strong> FCFS, SJF, SRTF, Round Robin, Priority, Multilevel Queue</p>
+            <p><strong>Performance Metrics:</strong> CPU utilization, throughput, turnaround time, waiting time, response time</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Calculate average waiting time for different algorithms</li>
+                <li>Compare scheduling algorithms with Gantt charts</li>
+                <li>Solve numerical problems with arrival times</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 5-6: Process Synchronization</h3>
+        <div class="chapter-content">
+            <p><strong>Critical Section Problem:</strong> Mutual exclusion, progress, bounded waiting</p>
+            <p><strong>Solutions:</strong> Peterson's algorithm, hardware solutions, semaphores, monitors</p>
+            <p><strong>Classic Problems:</strong> Producer-consumer, readers-writers, dining philosophers</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Implement semaphore solutions</li>
+                <li>Solve synchronization problems</li>
+                <li>Debug race conditions</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 7-8: Memory Management</h3>
+        <div class="chapter-content">
+            <p><strong>Memory Hierarchy:</strong> Registers, cache, main memory, secondary storage</p>
+            <p><strong>Techniques:</strong> Partitioning, paging, segmentation, virtual memory</p>
+            <p><strong>Page Replacement:</strong> FIFO, LRU, Optimal, Clock algorithm</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Calculate page fault rates</li>
+                <li>Simulate page replacement algorithms</li>
+                <li>Solve memory allocation problems</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 9-10: File Systems & I/O</h3>
+        <div class="chapter-content">
+            <p><strong>File Concepts:</strong> File attributes, operations, types, structure</p>
+            <p><strong>Directory Structure:</strong> Single-level, two-level, tree, acyclic graph</p>
+            <p><strong>Allocation Methods:</strong> Contiguous, linked, indexed allocation</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Design file system structure</li>
+                <li>Calculate disk access times</li>
+                <li>Implement file operations</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 11-12: Deadlocks</h3>
+        <div class="chapter-content">
+            <p><strong>Conditions:</strong> Mutual exclusion, hold and wait, no preemption, circular wait</p>
+            <p><strong>Handling:</strong> Prevention, avoidance (Banker's algorithm), detection, recovery</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Detect deadlocks in resource allocation graphs</li>
+                <li>Apply Banker's algorithm</li>
+                <li>Solve deadlock prevention problems</li>
+            </ul>
+        </div>
     </section>
 
     <footer class="site-footer">

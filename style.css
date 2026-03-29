@@ -233,6 +233,55 @@ a:focus {
     font-weight: 500;
 }
 
+/* Book Details Styling */
+.book-details {
+    margin: 20px 0;
+}
+
+.book-details h3 {
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.book-details p {
+    margin: 4px 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95em;
+}
+
+/* Chapter Content Styling */
+.chapter-content {
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid rgba(78, 205, 196, 0.6);
+}
+
+.chapter-content h4 {
+    color: #ffffff;
+    margin: 15px 0 8px 0;
+    font-size: 1em;
+}
+
+.chapter-content p {
+    margin: 8px 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.chapter-content ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.chapter-content li {
+    margin: 4px 0;
+    color: rgba(255, 255, 255, 0.85);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .top-nav {
@@ -240,21 +289,26 @@ a:focus {
         gap: 10px;
         padding: 15px 20px;
     }
-    
+
     .categories {
         flex-wrap: wrap;
         gap: 8px;
     }
-    
+
     .categories button {
         padding: 8px 14px;
         font-size: 14px;
     }
-    
+
     .book-container {
         grid-template-columns: 1fr;
         gap: 15px;
         padding: 15px;
+    }
+
+    .chapter-content {
+        padding: 12px;
+        margin: 12px 0;
     }
 }
 
