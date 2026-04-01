@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structure Book</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <p><a class="read-link" href="/" aria-label="Back to Library">← Back to Library</a></p>
+    <h1>📘 Data Structure</h1>
+
+    <section class="syllabus">
+        <h2>CS2 A: Data Structure (Pune University)</h2>
+        <ul>
+            <li>1. Arrays and Linked Lists</li>
+            <li>2. Stacks, Queues, Recursion</li>
+            <li>3. Trees (Binary, BST), Graphs</li>
+            <li>4. Searching, Sorting, Hashing</li>
+            <li>5. Complexity analysis (Big O)</li>
+        </ul>
+    </section>
+
+    <section class="study-material">
+        <h2>📚 Recommended Textbooks</h2>
+        <div class="book-details">
+            <h3>"Data Structures and Algorithms in C" by Reema Thareja</h3>
+            <p><strong>Chapters covered in syllabus:</strong> 1-8, 10-12</p>
+            <p><strong>Key features:</strong> Simple explanations, C code examples, practice questions</p>
+
+            <h3>"Introduction to Algorithms" by Cormen, Leiserson, Rivest, Stein (CLRS)</h3>
+            <p><strong>Reference chapters:</strong> 2-4, 6-7, 10-14, 22-23</p>
+            <p><strong>Best for:</strong> Algorithm analysis, advanced concepts, competitive programming</p>
+
+            <h3>"Data Structures Using C" by Tenenbaum</h3>
+            <p><strong>Covers:</strong> Complete data structures with implementation</p>
+            <p><strong>Focus:</strong> Practical coding and problem-solving</p>
+        </div>
+
+        <h2>🛠️ Additional Study Resources</h2>
+        <ul>
+            <li><strong>GeeksforGeeks:</strong> Interactive tutorials and practice problems</li>
+            <li><strong>LeetCode:</strong> Algorithm problems (Easy to Medium level)</li>
+            <li><strong>HackerRank:</strong> Data Structures domain challenges</li>
+            <li><strong>Pune University:</strong> Lab manual and previous year question papers</li>
+            <li><strong>YouTube:</strong> Abdul Bari's Algorithms playlist, MIT OCW</li>
+        </ul>
+    </section>
+
+    <h2>Chapter 1: Arrays</h2>
+    <div class="chapter-content">
+        <h3>1.1 Introduction to Arrays</h3>
+        <p>An array is a fundamental data structure that stores a collection of elements of the same data type in contiguous memory locations. Arrays provide a way to group related data items under a single name for easy access and manipulation.</p>
+
+        <h3>1.2 Definition</h3>
+        <p>An array is defined as a finite ordered collection of homogeneous data elements stored in contiguous memory locations. Each element in the array can be accessed using an index, which represents its position in the array.</p>
+
+        <h3>1.3 Types of Arrays</h3>
+        <ul>
+            <li><strong>One-Dimensional Arrays:</strong> Linear arrays that store elements in a single row.</li>
+            <li><strong>Two-Dimensional Arrays:</strong> Arrays arranged in rows and columns, like a matrix.</li>
+            <li><strong>Multi-Dimensional Arrays:</strong> Arrays with more than two dimensions.</li>
+        </ul>
+
+        <h3>1.4 Memory Representation</h3>
+        <p>In C programming, arrays are stored in contiguous memory locations. For a one-dimensional array of size n, the memory address of element at index i can be calculated as:</p>
+        <p><code>Address of arr[i] = Base Address + (i × Size of each element)</code></p>
+
+        <h3>1.5 Array Operations</h3>
+        <ul>
+            <li><strong>Traversal:</strong> Visiting each element of the array exactly once.</li>
+            <li><strong>Insertion:</strong> Adding a new element at a specified position.</li>
+            <li><strong>Deletion:</strong> Removing an element from a specified position.</li>
+            <li><strong>Searching:</strong> Finding the location of a particular element.</li>
+            <li><strong>Sorting:</strong> Arranging elements in a specific order.</li>
+        </ul>
+
+        <h3>1.6 Advantages and Disadvantages</h3>
+        <p><strong>Advantages:</strong></p>
+        <ul>
+            <li>Random access to elements using index (O(1) time)</li>
+            <li>Easy to implement and understand</li>
+            <li>Memory efficient for storing homogeneous data</li>
+        </ul>
+        <p><strong>Disadvantages:</strong></p>
+        <ul>
+            <li>Fixed size - cannot be resized dynamically</li>
+            <li>Insertion and deletion operations are expensive (O(n) time)</li>
+            <li>Waste of memory if not fully utilized</li>
+        </ul>
+
+        <h3>1.7 Time Complexity</h3>
+        <ul>
+            <li>Access: O(1)</li>
+            <li>Search: O(n)</li>
+            <li>Insertion/Deletion: O(n)</li>
+        </ul>
+
+        <h3>1.8 Code Examples</h3>
+        <p><strong>Declaration and Initialization:</strong></p>
+        <pre><code>int arr[5] = {1, 2, 3, 4, 5};
+int arr2[3][3] = {{1,2,3}, {4,5,6}, {7,8,9}};</code></pre>
+
+        <p><strong>Traversal:</strong></p>
+        <pre><code>for(int i = 0; i < 5; i++) {
+    printf("%d ", arr[i]);
+}</code></pre>
+
+        <h3>1.9 Applications</h3>
+        <ul>
+            <li>Storing marks of students in a class</li>
+            <li>Implementing matrices for mathematical operations</li>
+            <li>Lookup tables in compilers</li>
+            <li>Image processing (pixel arrays)</li>
+        </ul>
+
+        <h3>Practice Exercises:</h3>
+        <ul>
+            <li>Find maximum element in array</li>
+            <li>Rotate array by k positions</li>
+            <li>Find missing number in 1 to n</li>
+            <li>Two sum problem (LeetCode)</li>
+        </ul>
+    </div>
+
+    <h2>Chapter 2: Linked Lists</h2>
+    <div class="chapter-content">
+        <h3>2.1 Introduction to Linked Lists</h3>
+        <p>A linked list is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence. Unlike arrays, linked lists do not require contiguous memory allocation.</p>
+
+        <h3>2.2 Types of Linked Lists</h3>
+        <ul>
+            <li><strong>Singly Linked List:</strong> Each node has data and a pointer to the next node.</li>
+            <li><strong>Doubly Linked List:</strong> Each node has data, a pointer to the next node, and a pointer to the previous node.</li>
+            <li><strong>Circular Linked List:</strong> The last node points back to the first node, forming a circle.</li>
+        </ul>
+
+        <h3>2.3 Node Structure</h3>
+        <p>In C, a node in a singly linked list can be represented as:</p>
+        <pre><code>struct Node {
+    int data;
+    struct Node* next;
+};</code></pre>
+
+        <h3>2.4 Basic Operations</h3>
+        <ul>
+            <li><strong>Insertion:</strong> Adding a node at the beginning, end, or specific position.</li>
+            <li><strong>Deletion:</strong> Removing a node from the beginning, end, or specific position.</li>
+            <li><strong>Traversal:</strong> Visiting each node in the list.</li>
+            <li><strong>Search:</strong> Finding a particular element in the list.</li>
+            <li><strong>Reverse:</strong> Reversing the order of nodes in the list.</li>
+        </ul>
+
+        <h3>2.5 Advantages over Arrays</h3>
+        <ul>
+            <li>Dynamic size - can grow or shrink as needed</li>
+            <li>Efficient insertion and deletion operations</li>
+            <li>No memory wastage due to fixed size</li>
+            <li>Easier to implement certain operations like merging</li>
+        </ul>
+
+        <h3>2.6 Disadvantages</h3>
+        <ul>
+            <li>No random access - must traverse from the beginning</li>
+            <li>Extra memory for storing pointers</li>
+            <li>Not cache-friendly due to non-contiguous memory</li>
+        </ul>
+
+        <h3>2.7 Time Complexity</h3>
+        <ul>
+            <li>Access: O(n)</li>
+            <li>Search: O(n)</li>
+            <li>Insertion/Deletion at beginning: O(1)</li>
+            <li>Insertion/Deletion at end: O(n) for singly linked list, O(1) with tail pointer</li>
+        </ul>
+
+        <h3>2.8 Applications</h3>
+        <ul>
+            <li>Implementation of stacks and queues</li>
+            <li>Dynamic memory allocation</li>
+            <li>Symbol table management in compilers</li>
+            <li>Undo functionality in text editors</li>
+        </ul>
+
+        <h3>2.9 Cycle Detection</h3>
+        <p>A cycle in a linked list occurs when a node points back to a previous node, creating a loop. Floyd's Cycle Detection Algorithm (Tortoise and Hare) can detect cycles in O(n) time and O(1) space.</p>
+
+        <h3>Practice Exercises:</h3>
+        <ul>
+            <li>Reverse a linked list</li>
+            <li>Detect and remove cycle</li>
+            <li>Find middle element</li>
+            <li>Merge two sorted lists</li>
+        </ul>
+    </div>
+
+    <h2>Chapter 3: Stacks & Queues</h2>
+    <div class="chapter-content">
+        <h3>3.1 Introduction to Stacks</h3>
+        <p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. The last element added to the stack is the first one to be removed.</p>
+
+        <h3>3.2 Stack Operations</h3>
+        <ul>
+            <li><strong>Push:</strong> Add an element to the top of the stack</li>
+            <li><strong>Pop:</strong> Remove the top element from the stack</li>
+            <li><strong>Peek/Top:</strong> View the top element without removing it</li>
+            <li><strong>isEmpty:</strong> Check if the stack is empty</li>
+            <li><strong>isFull:</strong> Check if the stack is full (for array implementation)</li>
+        </ul>
+
+        <h3>3.3 Stack Implementation</h3>
+        <ul>
+            <li><strong>Array-based:</strong> Fixed size, efficient for small stacks</li>
+            <li><strong>Linked List-based:</strong> Dynamic size, no overflow issues</li>
+        </ul>
+
+        <h3>3.4 Introduction to Queues</h3>
+        <p>A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. The first element added to the queue is the first one to be removed.</p>
+
+        <h3>3.5 Queue Operations</h3>
+        <ul>
+            <li><strong>Enqueue:</strong> Add an element to the rear of the queue</li>
+            <li><strong>Dequeue:</strong> Remove the front element from the queue</li>
+            <li><strong>Front:</strong> View the front element without removing it</li>
+            <li><strong>Rear:</strong> View the rear element</li>
+            <li><strong>isEmpty:</strong> Check if the queue is empty</li>
+            <li><strong>isFull:</strong> Check if the queue is full</li>
+        </ul>
+
+        <h3>3.6 Types of Queues</h3>
+        <ul>
+            <li><strong>Linear Queue:</strong> Standard FIFO queue</li>
+            <li><strong>Circular Queue:</strong> Last position connects back to first, efficient space usage</li>
+            <li><strong>Priority Queue:</strong> Elements dequeued based on priority</li>
+            <li><strong>Deque (Double-ended Queue):</strong> Insertion and deletion from both ends</li>
+        </ul>
+
+        <h3>3.7 Applications</h3>
+        <p><strong>Stacks:</strong></p>
+        <ul>
+            <li>Function call management (call stack)</li>
+            <li>Expression evaluation and conversion</li>
+            <li>Undo operations in text editors</li>
+            <li>Browser back button functionality</li>
+        </ul>
+        <p><strong>Queues:</strong></p>
+        <ul>
+            <li>Process scheduling in operating systems</li>
+            <li>Print job management</li>
+            <li>Breadth-First Search (BFS) algorithm</li>
+            <li>CPU scheduling algorithms</li>
+        </ul>
+
+        <h3>3.8 Time Complexity</h3>
+        <ul>
+            <li>Stack operations: O(1)</li>
+            <li>Queue operations: O(1)</li>
+        </ul>
+
+        <h3>3.9 Recursion</h3>
+        <p>Recursion is a programming technique where a function calls itself. Every recursive function must have a base case to prevent infinite recursion. Recursion uses a call stack internally.</p>
+        <p><strong>Examples:</strong> Factorial calculation, Fibonacci series, Tower of Hanoi</p>
+
+        <h3>Practice Exercises:</h3>
+        <ul>
+            <li>Valid parentheses problem</li>
+            <li>Implement stack using queues</li>
+            <li>Circular queue implementation</li>
+            <li>Next greater element</li>
+        </ul>
+    </div>
+
+    <h2>Chapter 4: Trees</h2>
+    <div class="chapter-content">
+        <h3>4.1 Introduction to Trees</h3>
+        <p>A tree is a hierarchical data structure consisting of nodes connected by edges. It is a non-linear data structure with a root node and child nodes forming a parent-child relationship.</p>
+
+        <h3>4.2 Tree Terminology</h3>
+        <ul>
+            <li><strong>Root:</strong> The topmost node of the tree</li>
+            <li><strong>Node:</strong> Each element in the tree</li>
+            <li><strong>Edge:</strong> Connection between two nodes</li>
+            <li><strong>Parent:</strong> Node that has child nodes</li>
+            <li><strong>Child:</strong> Node that has a parent</li>
+            <li><strong>Leaf:</strong> Node with no children</li>
+            <li><strong>Height:</strong> Number of edges on the longest path from root to leaf</li>
+            <li><strong>Depth:</strong> Number of edges from root to the node</li>
+            <li><strong>Level:</strong> Nodes at the same depth</li>
+        </ul>
+
+        <h3>4.3 Types of Trees</h3>
+        <ul>
+            <li><strong>Binary Tree:</strong> Each node has at most two children</li>
+            <li><strong>Binary Search Tree (BST):</strong> Left subtree < root < right subtree</li>
+            <li><strong>AVL Tree:</strong> Self-balancing BST with height difference ≤ 1</li>
+            <li><strong>B-Tree:</strong> Self-balancing search tree for disk-based storage</li>
+            <li><strong>Red-Black Tree:</strong> Self-balancing BST with color properties</li>
+        </ul>
+
+        <h3>4.4 Tree Traversals</h3>
+        <ul>
+            <li><strong>Inorder (Left-Root-Right):</strong> Used in BST to get sorted order</li>
+            <li><strong>Preorder (Root-Left-Right):</strong> Used for copying trees</li>
+            <li><strong>Postorder (Left-Right-Root):</strong> Used for deleting trees</li>
+            <li><strong>Level Order:</strong> Breadth-first traversal using queue</li>
+        </ul>
+
+        <h3>4.5 Binary Search Tree (BST)</h3>
+        <p>A BST is a binary tree where for each node, all elements in its left subtree are less than the node, and all elements in its right subtree are greater than the node.</p>
+        <p><strong>Operations:</strong></p>
+        <ul>
+            <li>Search: O(log n) average case</li>
+            <li>Insert: O(log n) average case</li>
+            <li>Delete: O(log n) average case</li>
+        </ul>
+
+        <h3>4.6 AVL Trees</h3>
+        <p>AVL trees are height-balanced BSTs. The height difference between left and right subtrees is at most 1. Rotations are used to maintain balance: left rotation, right rotation, left-right rotation, right-left rotation.</p>
+
+        <h3>4.7 Tree Operations</h3>
+        <ul>
+            <li><strong>Insertion:</strong> Add a new node to the tree</li>
+            <li><strong>Deletion:</strong> Remove a node from the tree</li>
+            <li><strong>Search:</strong> Find a particular node</li>
+            <li><strong>Height:</strong> Calculate the height of the tree</li>
+            <li><strong>Diameter:</strong> Longest path between any two nodes</li>
+            <li><strong>Lowest Common Ancestor (LCA):</strong> Find the lowest common ancestor of two nodes</li>
+        </ul>
+
+        <h3>4.8 Applications</h3>
+        <ul>
+            <li>File system organization</li>
+            <li>Database indexing (B-Trees)</li>
+            <li>Expression parsing</li>
+            <li>Decision trees in machine learning</li>
+            <li>Huffman coding for data compression</li>
+        </ul>
+
+        <h3>4.9 Time Complexity</h3>
+        <ul>
+            <li>Traversal: O(n)</li>
+            <li>Search/Insert/Delete in BST: O(log n) average, O(n) worst case</li>
+            <li>Balanced trees: O(log n) for all operations</li>
+        </ul>
+
+        <h3>Practice Exercises:</h3>
+        <ul>
+            <li>Binary tree traversals</li>
+            <li>Check if BST</li>
+            <li>Lowest common ancestor</li>
+            <li>Serialize/deserialize tree</li>
+        </ul>
+    </div>
+
+    <h2>Chapter 5: Graphs</h2>
+    <div class="chapter-content">
+        <h3>5.1 Introduction to Graphs</h3>
+        <p>A graph is a non-linear data structure consisting of vertices (nodes) connected by edges. Graphs are used to represent relationships between objects.</p>
+
+        <h3>5.2 Graph Terminology</h3>
+        <ul>
+            <li><strong>Vertex/Node:</strong> Fundamental unit of a graph</li>
+            <li><strong>Edge:</strong> Connection between two vertices</li>
+            <li><strong>Adjacent vertices:</strong> Vertices connected by an edge</li>
+            <li><strong>Degree:</strong> Number of edges connected to a vertex</li>
+            <li><strong>Path:</strong> Sequence of vertices connected by edges</li>
+            <li><strong>Cycle:</strong> Path that starts and ends at the same vertex</li>
+            <li><strong>Connected Graph:</strong> Path exists between every pair of vertices</li>
+            <li><strong>Weighted Graph:</strong> Edges have weights/costs</li>
+            <li><strong>Directed Graph:</strong> Edges have direction</li>
+        </ul>
+
+        <h3>5.3 Graph Representations</h3>
+        <ul>
+            <li><strong>Adjacency Matrix:</strong> 2D array where matrix[i][j] = 1 if edge exists, 0 otherwise. Space: O(V²)</li>
+            <li><strong>Adjacency List:</strong> Array of lists where each list contains adjacent vertices. Space: O(V + E)</li>
+        </ul>
+
+        <h3>5.4 Graph Traversal Algorithms</h3>
+        <p><strong>Depth-First Search (DFS):</strong> Explores as far as possible along each branch before backtracking. Uses stack (recursion or explicit stack).</p>
+        <p><strong>Breadth-First Search (BFS):</strong> Explores all vertices at the present depth before moving to next depth level. Uses queue.</p>
+
+        <h3>5.5 Shortest Path Algorithms</h3>
+        <ul>
+            <li><strong>Dijkstra's Algorithm:</strong> Finds shortest path from source to all vertices in weighted graph with non-negative weights</li>
+            <li><strong>Bellman-Ford Algorithm:</strong> Handles negative weights, detects negative cycles</li>
+            <li><strong>Floyd-Warshall Algorithm:</strong> Finds shortest paths between all pairs of vertices</li>
+        </ul>
+
+        <h3>5.6 Minimum Spanning Tree (MST)</h3>
+        <p>A spanning tree connects all vertices with minimum total edge weight and no cycles.</p>
+        <ul>
+            <li><strong>Kruskal's Algorithm:</strong> Greedy approach, sorts edges by weight</li>
+            <li><strong>Prim's Algorithm:</strong> Greedy approach, grows tree from a starting vertex</li>
+        </ul>
+
+        <h3>5.7 Topological Sorting</h3>
+        <p>Linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge u→v, vertex u comes before v. Used in task scheduling, dependency resolution.</p>
+
+        <h3>5.8 Cycle Detection</h3>
+        <ul>
+            <li><strong>Undirected Graph:</strong> Use DFS or Union-Find</li>
+            <li><strong>Directed Graph:</strong> Use DFS with color coding (white, gray, black)</li>
+        </ul>
+
+        <h3>5.9 Applications</h3>
+        <ul>
+            <li>Social networks (Facebook, LinkedIn)</li>
+            <li>Transportation networks (maps, GPS)</li>
+            <li>Computer networks (routing algorithms)</li>
+            <li>Dependency graphs in software</li>
+            <li>Recommendation systems</li>
+        </ul>
+
+        <h3>5.10 Time Complexity</h3>
+        <ul>
+            <li>DFS/BFS: O(V + E)</li>
+            <li>Dijkstra: O((V + E) log V) with binary heap</li>
+            <li>Kruskal/Prim: O(E log E)</li>
+            <li>Floyd-Warshall: O(V³)</li>
+        </ul>
+
+        <h3>Practice Exercises:</h3>
+        <ul>
+            <li>Graph traversal (DFS/BFS)</li>
+            <li>Detect cycle in graph</li>
+            <li>Topological sorting</li>
+            <li>Find shortest path</li>
+        </ul>
+    </div>
+
+    <h2>Chapter 6: Sorting & Searching</h2>
+    <div class="chapter-content">
+        <h3>6.1 Introduction to Sorting</h3>
+        <p>Sorting is the process of arranging elements in a specific order (ascending or descending). Efficient sorting is crucial for many algorithms and data processing tasks.</p>
+
+        <h3>6.2 Sorting Algorithms</h3>
+        <p><strong>Bubble Sort:</strong> Repeatedly swaps adjacent elements if they are in wrong order. Time: O(n²), Space: O(1)</p>
+        <p><strong>Selection Sort:</strong> Finds minimum element and places it at beginning. Time: O(n²), Space: O(1)</p>
+        <p><strong>Insertion Sort:</strong> Builds sorted array one element at a time. Time: O(n²), Space: O(1)</p>
+        <p><strong>Merge Sort:</strong> Divide and conquer algorithm. Time: O(n log n), Space: O(n)</p>
+        <p><strong>Quick Sort:</strong> Partition-based divide and conquer. Time: O(n log n) average, O(n²) worst, Space: O(log n)</p>
+        <p><strong>Heap Sort:</strong> Uses heap data structure. Time: O(n log n), Space: O(1)</p>
+
+        <h3>6.3 Searching Algorithms</h3>
+        <p><strong>Linear Search:</strong> Sequential search through array. Time: O(n)</p>
+        <p><strong>Binary Search:</strong> Divide and conquer on sorted array. Time: O(log n), Space: O(1)</p>
+        <p><strong>Requirements:</strong> Array must be sorted</p>
+
+        <h3>6.4 Hashing</h3>
+        <p>Hashing maps data to fixed-size values using hash functions. Used in hash tables for O(1) average time complexity for search, insert, delete operations.</p>
+        <p><strong>Hash Function:</strong> Converts key to index</p>
+        <p><strong>Collision Resolution:</strong> Chaining, Open Addressing (Linear Probing, Quadratic Probing, Double Hashing)</p>
+        <p><strong>Load Factor:</strong> Ratio of stored elements to table size</p>
+
+        <h3>6.5 Complexity Analysis</h3>
+        <p><strong>Time Complexity:</strong> How execution time grows with input size</p>
+        <ul>
+            <li>Big O (O): Upper bound, worst case</li>
+            <li>Big Ω (Ω): Lower bound, best case</li>
+            <li>Big Θ (Θ): Tight bound, average case</li>
+        </ul>
+        <p><strong>Space Complexity:</strong> Memory usage analysis</p>
+
+        <h3>6.6 Comparison of Sorting Algorithms</h3>
+        <table>
+            <tr><th>Algorithm</th><th>Time Complexity</th><th>Space Complexity</th><th>Stable</th><th>In-place</th></tr>
+            <tr><td>Bubble Sort</td><td>O(n²)</td><td>O(1)</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Selection Sort</td><td>O(n²)</td><td>O(1)</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Insertion Sort</td><td>O(n²)</td><td>O(1)</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Merge Sort</td><td>O(n log n)</td><td>O(n)</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Quick Sort</td><td>O(n log n)</td><td>O(log n)</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Heap Sort</td><td>O(n log n)</td><td>O(1)</td><td>No</td><td>Yes</td></tr>
+        </table>
+
+        <h3>6.7 Applications</h3>
+        <ul>
+            <li>Database sorting and searching</li>
+            <li>Search engines (indexing)</li>
+            <li>E-commerce (price sorting)</li>
+            <li>Data analysis and visualization</li>
+            <li>Compiler design (symbol tables)</li>
+        </ul>
+
+        <h3>6.8 Recursion in Algorithms</h3>
+        <p>Many algorithms use recursion: Merge Sort, Quick Sort, Binary Search, Tree traversals. Recursion requires base case and recursive case.</p>
+
+        <h3>Practice Exercises:</h3>
+        <ul>
+            <li>Implement all sorting algorithms</li>
+            <li>Binary search variations</li>
+            <li>Find kth largest element</li>
+            <li>Sort array with 0s, 1s, 2s</li>
+        </ul>
+    </div>
+
+</body>
+</html>

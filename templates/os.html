@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating System - Pune University BSc CS</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <p><a class="read-link" href="/" aria-label="Back to Library">← Back to Library</a></p>
+    <h1>🖥️ Operating System</h1>
+
+    <section class="syllabus">
+        <h2>Operating System Syllabus (Pune University)</h2>
+        <ul>
+            <li>Concurrency: processes, threads, synchronization</li>
+            <li>Scheduling algorithms: FCFS, SJF, Round Robin, Priority</li>
+            <li>Memory management: paging, segmentation, virtual memory</li>
+            <li>File systems, I/O systems, device management</li>
+            <li>Deadlock: detection, prevention, avoidance, recovery</li>
+            <li>Modern OS concepts: virtualization, cloud, containers</li>
+        </ul>
+    </section>
+
+    <section class="study-material">
+        <h2>📚 Recommended Textbooks</h2>
+        <div class="book-details">
+            <h3>"Operating System Concepts" by Abraham Silberschatz, Peter B. Galvin, Greg Gagne</h3>
+            <p><strong>Edition:</strong> 10th Edition</p>
+            <p><strong>Chapters for syllabus:</strong> 1-3, 5-6, 8-10, 12-13, 15-16</p>
+            <p><strong>Key features:</strong> Comprehensive coverage, excellent diagrams, practical examples</p>
+
+            <h3>"Modern Operating Systems" by Andrew S. Tanenbaum, Herbert Bos</h3>
+            <p><strong>Edition:</strong> 5th Edition</p>
+            <p><strong>Best for:</strong> Real-world examples, Linux/Windows case studies</p>
+            <p><strong>Strength:</strong> Clear explanations, modern OS concepts</p>
+
+            <h3>"Operating Systems: Internals and Design Principles" by William Stallings</h3>
+            <p><strong>Focus:</strong> Design principles, internal mechanisms</p>
+            <p><strong>Level:</strong> Detailed technical depth</p>
+        </div>
+
+        <h2>🛠️ Practical Resources</h2>
+        <ul>
+            <li><strong>Linux Terminal:</strong> Practice commands and process management</li>
+            <li><strong>Online Simulators:</strong> OS scheduling and memory management simulators</li>
+            <li><strong>GDB Debugger:</strong> Debug C programs and understand process execution</li>
+            <li><strong>OS Lab Manual:</strong> Pune University practical assignments</li>
+            <li><strong>Virtual Machines:</strong> VMware/VirtualBox for OS experimentation</li>
+        </ul>
+    </section>
+
+    <section class="core-topics">
+        <h2>Key Practical Skills</h2>
+        <ul>
+            <li>Write code for and simulate scheduling algorithms</li>
+            <li>Solve memory allocation problems (first-fit, best-fit, worst-fit)</li>
+            <li>Implement producer-consumer, readers-writers problems</li>
+            <li>Study Linux commands and process monitoring tools</li>
+        </ul>
+    </section>
+
+    <section class="topic-explanations">
+        <h2>📖 Detailed Chapter Breakdown</h2>
+
+        <h3>Chapter 1-2: Introduction & Processes</h3>
+        <div class="chapter-content">
+            <h4>1.1 What is an Operating System?</h4>
+            <p>An operating system (OS) is a software that acts as an intermediary between the user and the computer hardware. It provides a convenient environment for executing programs and manages computer resources.</p>
+
+            <h4>1.2 Functions of Operating System</h4>
+            <ul>
+                <li><strong>Process Management:</strong> Creation, scheduling, termination of processes</li>
+                <li><strong>Memory Management:</strong> Allocation and deallocation of memory</li>
+                <li><strong>File Management:</strong> File creation, deletion, manipulation</li>
+                <li><strong>I/O Management:</strong> Management of input/output devices</li>
+                <li><strong>Security:</strong> Protection against unauthorized access</li>
+                <li><strong>Networking:</strong> Communication between systems</li>
+            </ul>
+
+            <h4>1.3 Types of Operating Systems</h4>
+            <ul>
+                <li><strong>Batch OS:</strong> Jobs processed in batches without user interaction</li>
+                <li><strong>Time-sharing OS:</strong> Multiple users share CPU time (Unix, Windows)</li>
+                <li><strong>Real-time OS:</strong> Response within strict time constraints</li>
+                <li><strong>Distributed OS:</strong> Multiple interconnected computers</li>
+                <li><strong>Embedded OS:</strong> Designed for specific hardware (mobile, IoT)</li>
+            </ul>
+
+            <h4>1.4 Process Concept</h4>
+            <p>A process is a program in execution. It is the unit of work in a system.</p>
+
+            <h4>1.5 Process vs Program</h4>
+            <ul>
+                <li><strong>Program:</strong> Passive entity (code on disk)</li>
+                <li><strong>Process:</strong> Active entity (program in execution)</li>
+            </ul>
+
+            <h4>1.6 Process States</h4>
+            <ul>
+                <li><strong>New:</strong> Process being created</li>
+                <li><strong>Ready:</strong> Waiting to be assigned to CPU</li>
+                <li><strong>Running:</strong> Instructions being executed</li>
+                <li><strong>Waiting/Blocked:</strong> Waiting for some event (I/O completion)</li>
+                <li><strong>Terminated:</strong> Process finished execution</li>
+            </ul>
+
+            <h4>1.7 Process Control Block (PCB)</h4>
+            <p>PCB is a data structure that stores information about a process:</p>
+            <ul>
+                <li>Process ID</li>
+                <li>Process state</li>
+                <li>Program counter</li>
+                <li>CPU registers</li>
+                <li>Memory management information</li>
+                <li>I/O status information</li>
+                <li>Priority</li>
+            </ul>
+
+            <h4>1.8 Context Switching</h4>
+            <p>Context switching is the process of saving the state of a running process and loading the state of another process. It involves:</p>
+            <ul>
+                <li>Saving CPU state (registers, PC)</li>
+                <li>Updating PCB</li>
+                <li>Loading new process state</li>
+            </ul>
+            <p><strong>Overhead:</strong> Time spent in context switching reduces CPU utilization.</p>
+
+            <h4>1.9 Process Operations</h4>
+            <ul>
+                <li><strong>Process Creation:</strong> Parent process creates child process</li>
+                <li><strong>Process Termination:</strong> Process ends execution</li>
+                <li><strong>Process Suspension:</strong> Process moved to secondary storage</li>
+                <li><strong>Process Resume:</strong> Suspended process brought back to memory</li>
+            </ul>
+
+            <h4>1.10 Threads</h4>
+            <p>A thread is a lightweight process. Multiple threads can exist within one process, sharing code, data, and files but having their own stack and registers.</p>
+
+            <h4>1.11 Types of Threads</h4>
+            <ul>
+                <li><strong>User Threads:</strong> Managed by user-level thread library</li>
+                <li><strong>Kernel Threads:</strong> Managed by OS kernel</li>
+            </ul>
+
+            <h4>1.12 Multithreading Models</h4>
+            <ul>
+                <li><strong>Many-to-One:</strong> Multiple user threads to one kernel thread</li>
+                <li><strong>One-to-One:</strong> Each user thread maps to kernel thread</li>
+                <li><strong>Many-to-Many:</strong> Multiple user threads to multiple kernel threads</li>
+            </ul>
+
+            <h4>1.13 Benefits of Threads</h4>
+            <ul>
+                <li>Responsiveness</li>
+                <li>Resource sharing</li>
+                <li>Economy</li>
+                <li>Scalability</li>
+            </ul>
+
+            <p><strong>Process Concepts:</strong> Process vs Program, Process states, PCB, Context switching</p>
+            <p><strong>Process Operations:</strong> Create, terminate, suspend, resume</p>
+            <p><strong>Threads:</strong> User threads, kernel threads, multithreading models</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Draw process state diagrams</li>
+                <li>Calculate context switching overhead</li>
+                <li>Implement thread creation in C</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 3-4: CPU Scheduling</h3>
+        <div class="chapter-content">
+            <h4>3.1 Introduction to CPU Scheduling</h4>
+            <p>CPU scheduling is the process of selecting a process from the ready queue to execute on the CPU. The goal is to maximize CPU utilization and provide fair allocation of CPU time.</p>
+
+            <h4>3.2 Scheduling Criteria</h4>
+            <ul>
+                <li><strong>CPU Utilization:</strong> Percentage of time CPU is busy</li>
+                <li><strong>Throughput:</strong> Number of processes completed per unit time</li>
+                <li><strong>Turnaround Time:</strong> Time from submission to completion</li>
+                <li><strong>Waiting Time:</strong> Time spent in ready queue</li>
+                <li><strong>Response Time:</strong> Time from submission to first response</li>
+            </ul>
+
+            <h4>3.3 Types of Schedulers</h4>
+            <ul>
+                <li><strong>Long-term Scheduler:</strong> Selects processes from job pool to load into memory</li>
+                <li><strong>Short-term Scheduler:</strong> Selects process from ready queue to execute</li>
+                <li><strong>Medium-term Scheduler:</strong> Handles process swapping</li>
+            </ul>
+
+            <h4>3.4 Scheduling Algorithms</h4>
+
+            <h5>3.4.1 First-Come-First-Served (FCFS)</h5>
+            <ul>
+                <li>Non-preemptive algorithm</li>
+                <li>Processes executed in arrival order</li>
+                <li>Simple but may cause convoy effect</li>
+                <li>Waiting time depends on arrival order</li>
+            </ul>
+
+            <h5>3.4.2 Shortest Job First (SJF)</h5>
+            <ul>
+                <li>Non-preemptive: Selects process with shortest burst time</li>
+                <li>Preemptive version: Shortest Remaining Time First (SRTF)</li>
+                <li>Optimal for minimizing average waiting time</li>
+                <li>Requires knowledge of burst time</li>
+            </ul>
+
+            <h5>3.4.3 Round Robin (RR)</h5>
+            <ul>
+                <li>Preemptive algorithm with time quantum</li>
+                <li>Each process gets CPU for fixed time slice</li>
+                <li>If process doesn't complete, moved to end of queue</li>
+                <li>Fair allocation, good response time</li>
+                <li>Performance depends on time quantum size</li>
+            </ul>
+
+            <h5>3.4.4 Priority Scheduling</h5>
+            <ul>
+                <li>Each process has priority number</li>
+                <li>Higher priority processes execute first</li>
+                <li>Can be preemptive or non-preemptive</li>
+                <li>May cause starvation of low-priority processes</li>
+                <li>Solution: Aging (increase priority over time)</li>
+            </ul>
+
+            <h5>3.4.5 Multilevel Queue Scheduling</h5>
+            <ul>
+                <li>Ready queue divided into multiple queues</li>
+                <li>Each queue has its own scheduling algorithm</li>
+                <li>Processes assigned to queues based on properties</li>
+                <li>Fixed priority between queues</li>
+            </ul>
+
+            <h5>3.4.6 Multilevel Feedback Queue</h5>
+            <ul>
+                <li>Allows process movement between queues</li>
+                <li>Processes start in highest priority queue</li>
+                <li>If time quantum expires, moved to lower priority queue</li>
+                <li>I/O bound processes stay in high priority queues</li>
+                <li>CPU bound processes move to lower priority queues</li>
+            </ul>
+
+            <h4>3.5 Real-time Scheduling</h4>
+            <ul>
+                <li><strong>Hard Real-time:</strong> Missing deadline is catastrophic</li>
+                <li><strong>Soft Real-time:</strong> Missing deadline is undesirable but acceptable</li>
+                <li><strong>Rate Monotonic Scheduling (RMS):</strong> Shorter period tasks get higher priority</li>
+                <li><strong>Earliest Deadline First (EDF):</strong> Task with earliest deadline gets highest priority</li>
+            </ul>
+
+            <h4>3.6 Scheduling in Linux</h4>
+            <p>Linux uses Completely Fair Scheduler (CFS) which:</p>
+            <ul>
+                <li>Maintains red-black tree of runnable processes</li>
+                <li>Assigns virtual runtime to each process</li>
+                <li>Selects process with smallest virtual runtime</li>
+                <li>Provides fair share of CPU time</li>
+            </ul>
+
+            <p><strong>Algorithms:</strong> FCFS, SJF, SRTF, Round Robin, Priority, Multilevel Queue</p>
+            <p><strong>Performance Metrics:</strong> CPU utilization, throughput, turnaround time, waiting time, response time</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Calculate average waiting time for different algorithms</li>
+                <li>Compare scheduling algorithms with Gantt charts</li>
+                <li>Solve numerical problems with arrival times</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 5-6: Process Synchronization</h3>
+        <div class="chapter-content">
+            <h4>5.1 Race Condition</h4>
+            <p>A race condition occurs when multiple processes access and manipulate shared data concurrently, and the final outcome depends on the order of execution.</p>
+
+            <h4>5.2 Critical Section Problem</h4>
+            <p>The critical section is a segment of code where shared resources are accessed. The critical section problem is to design a protocol that processes can use to cooperate.</p>
+
+            <h4>5.3 Requirements for Critical Section Solution</h4>
+            <ul>
+                <li><strong>Mutual Exclusion:</strong> Only one process can execute in critical section</li>
+                <li><strong>Progress:</strong> If no process is in critical section, some waiting process should be allowed to enter</li>
+                <li><strong>Bounded Waiting:</strong> There should be a limit on how long a process waits to enter critical section</li>
+            </ul>
+
+            <h4>5.4 Peterson's Solution</h4>
+            <p>A software solution for two processes using shared variables:</p>
+            <ul>
+                <li>flag[i]: Indicates if process i wants to enter critical section</li>
+                <li>turn: Indicates whose turn it is to enter</li>
+            </ul>
+            <p>Satisfies all three requirements for critical section problem.</p>
+
+            <h4>5.5 Hardware Solutions</h4>
+            <ul>
+                <li><strong>Test-and-Set:</strong> Atomic instruction that tests and sets a lock variable</li>
+                <li><strong>Compare-and-Swap:</strong> Atomic instruction that compares and swaps values</li>
+                <li><strong>Disadvantages:</strong> Busy waiting, priority inversion possible</li>
+            </ul>
+
+            <h4>5.6 Semaphores</h4>
+            <p>A semaphore is an integer variable used for signaling between processes. It can be:</p>
+            <ul>
+                <li><strong>Binary Semaphore:</strong> Values 0 or 1 (mutex)</li>
+                <li><strong>Counting Semaphore:</strong> Can take any non-negative value</li>
+            </ul>
+
+            <h4>5.7 Semaphore Operations</h4>
+            <ul>
+                <li><strong>wait() (P operation):</strong> Decrement semaphore, block if negative</li>
+                <li><strong>signal() (V operation):</strong> Increment semaphore, wake up waiting process</li>
+            </ul>
+
+            <h4>5.8 Monitors</h4>
+            <p>A monitor is a high-level synchronization construct that encapsulates:</p>
+            <ul>
+                <li>Shared data</li>
+                <li>Procedures to manipulate data</li>
+                <li>Synchronization between procedures</li>
+            </ul>
+            <p>Only one process can execute inside monitor at a time.</p>
+
+            <h4>5.9 Classic Synchronization Problems</h4>
+
+            <h5>5.9.1 Producer-Consumer Problem</h5>
+            <p>Producer produces items and puts in buffer, consumer consumes from buffer.</p>
+            <ul>
+                <li>Use bounded buffer</li>
+                <li>Semaphores: empty, full, mutex</li>
+                <li>empty = n, full = 0, mutex = 1</li>
+            </ul>
+
+            <h5>5.9.2 Readers-Writers Problem</h5>
+            <p>Multiple readers can read simultaneously, but writer needs exclusive access.</p>
+            <ul>
+                <li><strong>First Readers-Writers:</strong> Readers have priority</li>
+                <li><strong>Second Readers-Writers:</strong> Writers have priority</li>
+                <li>Semaphores: readCount, wrt</li>
+            </ul>
+
+            <h5>5.9.3 Dining Philosophers Problem</h5>
+            <p>Five philosophers sitting around table, each needs two chopsticks to eat.</p>
+            <ul>
+                <li>Can lead to deadlock</li>
+                <li>Solutions: Resource hierarchy, arbitrator, limited philosophers</li>
+            </ul>
+
+            <h4>5.10 Deadlocks in Synchronization</h4>
+            <p>Improper use of semaphores can lead to deadlocks. For example, acquiring semaphores in wrong order.</p>
+
+            <p><strong>Critical Section Problem:</strong> Mutual exclusion, progress, bounded waiting</p>
+            <p><strong>Solutions:</strong> Peterson's algorithm, hardware solutions, semaphores, monitors</p>
+            <p><strong>Classic Problems:</strong> Producer-consumer, readers-writers, dining philosophers</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Implement semaphore solutions</li>
+                <li>Solve synchronization problems</li>
+                <li>Debug race conditions</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 7-8: Memory Management</h3>
+        <div class="chapter-content">
+            <h4>7.1 Memory Hierarchy</h4>
+            <p>Memory is organized in a hierarchy based on speed, cost, and capacity:</p>
+            <ul>
+                <li><strong>Registers:</strong> Fastest, smallest, most expensive</li>
+                <li><strong>Cache Memory:</strong> Faster than RAM, used to speed up access</li>
+                <li><strong>Main Memory (RAM):</strong> Primary memory for program execution</li>
+                <li><strong>Secondary Storage:</strong> Disk, SSD for long-term storage</li>
+            </ul>
+
+            <h4>7.2 Memory Management Requirements</h4>
+            <ul>
+                <li>Relocation: Programs should run anywhere in memory</li>
+                <li>Protection: Processes should not access each other's memory</li>
+                <li>Sharing: Allow controlled sharing of memory</li>
+                <li>Logical Organization: Programs organized in modules</li>
+                <li>Physical Organization: Memory organized for efficiency</li>
+            </ul>
+
+            <h4>7.3 Memory Partitioning</h4>
+            <ul>
+                <li><strong>Fixed Partitioning:</strong> Memory divided into fixed-size partitions</li>
+                <ul>
+                    <li>Equal-size partitions</li>
+                    <li>Unequal-size partitions</li>
+                    <li>Internal fragmentation</li>
+                </ul>
+                <li><strong>Dynamic Partitioning:</strong> Partitions created dynamically</li>
+                <ul>
+                    <li>First-fit, best-fit, worst-fit allocation</li>
+                    <li>External fragmentation</li>
+                    <li>Compaction to reduce fragmentation</li>
+                </ul>
+            </ul>
+
+            <h4>7.4 Paging</h4>
+            <p>Paging is a memory management scheme that eliminates external fragmentation by dividing physical memory into fixed-size blocks called frames and logical memory into same-size blocks called pages.</p>
+            <ul>
+                <li><strong>Page:</strong> Fixed-size block of logical memory</li>
+                <li><strong>Frame:</strong> Fixed-size block of physical memory</li>
+                <li><strong>Page Table:</strong> Maps logical pages to physical frames</li>
+                <li><strong>Page Fault:</strong> When requested page is not in memory</li>
+            </ul>
+
+            <h4>7.5 Segmentation</h4>
+            <p>Segmentation divides logical memory into variable-size segments, each representing a logical unit (code, data, stack).</p>
+            <ul>
+                <li><strong>Segment Table:</strong> Maps segments to physical memory</li>
+                <li><strong>Advantages:</strong> Logical division, sharing, protection</li>
+                <li><strong>Disadvantages:</strong> External fragmentation</li>
+            </ul>
+
+            <h4>7.6 Virtual Memory</h4>
+            <p>Virtual memory allows execution of processes that may not be completely in memory. It provides:</p>
+            <ul>
+                <li>Larger address space than physical memory</li>
+                <li>Protection and sharing</li>
+                <li>Efficient memory utilization</li>
+            </ul>
+
+            <h4>7.7 Demand Paging</h4>
+            <p>Pages are loaded into memory only when needed (on page fault).</p>
+            <ul>
+                <li><strong>Valid-Invalid Bit:</strong> Indicates if page is in memory</li>
+                <li><strong>Page Fault Handling:</strong> Trap to OS, find frame, load page, update table</li>
+            </ul>
+
+            <h4>7.8 Page Replacement Algorithms</h4>
+            <p>When no free frame is available, OS must select a victim page to replace.</p>
+
+            <h5>7.8.1 FIFO (First-In-First-Out)</h5>
+            <ul>
+                <li>Replace oldest page</li>
+                <li>Simple but may replace frequently used pages</li>
+                <li>Belady's anomaly: More frames can cause more page faults</li>
+            </ul>
+
+            <h5>7.8.2 Optimal</h5>
+            <ul>
+                <li>Replace page that will not be used for longest time</li>
+                <li>Lowest page fault rate</li>
+                <li>Not implementable (requires future knowledge)</li>
+            </ul>
+
+            <h5>7.8.3 LRU (Least Recently Used)</h5>
+            <ul>
+                <li>Replace page that has not been used for longest time</li>
+                <li>Good approximation of optimal</li>
+                <li>Requires hardware support for timestamp</li>
+            </ul>
+
+            <h5>7.8.4 Clock Algorithm</h5>
+            <ul>
+                <li>Efficient approximation of LRU</li>
+                <li>Uses reference bit with circular list</li>
+                <li>Second chance algorithm</li>
+            </ul>
+
+            <h4>7.9 Thrashing</h4>
+            <p>Thrashing occurs when a process spends more time paging than executing. Causes:</p>
+            <ul>
+                <li>Too many processes in memory</li>
+                <li>Small page size</li>
+                <li>Low degree of multiprogramming</li>
+            </ul>
+            <p><strong>Solution:</strong> Working set model, page fault frequency</p>
+
+            <h4>7.10 Memory Protection</h4>
+            <ul>
+                <li><strong>Base Register:</strong> Starting address of process</li>
+                <li><strong>Limit Register:</strong> Size of process</li>
+                <li><strong>Address Binding:</strong> Compile time, load time, execution time</li>
+            </ul>
+
+            <p><strong>Memory Hierarchy:</strong> Registers, cache, main memory, secondary storage</p>
+            <p><strong>Techniques:</strong> Partitioning, paging, segmentation, virtual memory</p>
+            <p><strong>Page Replacement:</strong> FIFO, LRU, Optimal, Clock algorithm</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Calculate page fault rates</li>
+                <li>Simulate page replacement algorithms</li>
+                <li>Solve memory allocation problems</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 9-10: File Systems & I/O</h3>
+        <div class="chapter-content">
+            <h4>9.1 File Concepts</h4>
+            <p>A file is a named collection of related information that is recorded on secondary storage. Files provide a logical view of storage.</p>
+
+            <h4>9.2 File Attributes</h4>
+            <ul>
+                <li><strong>Name:</strong> Human-readable identifier</li>
+                <li><strong>Type:</strong> Indicates file content (text, binary, etc.)</li>
+                <li><strong>Location:</strong> Device and location on device</li>
+                <li><strong>Size:</strong> Current file size</li>
+                <li><strong>Protection:</strong> Access control information</li>
+                <li><strong>Time:</strong> Creation, last access, last modification</li>
+            </ul>
+
+            <h4>9.3 File Operations</h4>
+            <ul>
+                <li><strong>Create:</strong> Create a new file</li>
+                <li><strong>Open:</strong> Prepare file for access</li>
+                <li><strong>Read:</strong> Read data from file</li>
+                <li><strong>Write:</strong> Write data to file</li>
+                <li><strong>Seek:</strong> Reposition file pointer</li>
+                <li><strong>Close:</strong> Close file after access</li>
+                <li><strong>Delete:</strong> Remove file from system</li>
+            </ul>
+
+            <h4>9.4 File Types</h4>
+            <ul>
+                <li><strong>Regular Files:</strong> Contain user data</li>
+                <li><strong>Directory Files:</strong> Contain file information</li>
+                <li><strong>Special Files:</strong> Represent I/O devices</li>
+                <li><strong>Pipes:</strong> Inter-process communication</li>
+                <li><strong>Symbolic Links:</strong> Pointers to other files</li>
+            </ul>
+
+            <h4>9.5 File Structure</h4>
+            <ul>
+                <li><strong>Unstructured:</strong> Sequence of bytes/words</li>
+                <li><strong>Simple Record Structure:</strong> Fixed-length records</li>
+                <li><strong>Complex Structures:</strong> Variable-length records, trees</li>
+            </ul>
+
+            <h4>9.6 Access Methods</h4>
+            <ul>
+                <li><strong>Sequential Access:</strong> Read/write in order</li>
+                <li><strong>Direct Access:</strong> Read/write any block</li>
+                <li><strong>Indexed Access:</strong> Use index for faster access</li>
+            </ul>
+
+            <h4>9.7 Directory Structure</h4>
+            <p>Directories organize files and provide naming and access control.</p>
+
+            <h5>9.7.1 Single-Level Directory</h5>
+            <ul>
+                <li>All files in one directory</li>
+                <li>Simple but naming conflicts</li>
+            </ul>
+
+            <h5>9.7.2 Two-Level Directory</h5>
+            <ul>
+                <li>Master directory with user directories</li>
+                <li>Separate directories per user</li>
+            </ul>
+
+            <h5>9.7.3 Tree-Structured Directory</h5>
+            <ul>
+                <li>Hierarchical structure</li>
+                <li>Absolute and relative paths</li>
+                <li>Current directory concept</li>
+            </ul>
+
+            <h5>9.7.4 Acyclic Graph Directory</h5>
+            <ul>
+                <li>Allows shared subdirectories</li>
+                <li>Symbolic links or shared directories</li>
+            </ul>
+
+            <h4>9.8 File System Implementation</h4>
+
+            <h5>9.8.1 File Allocation Methods</h5>
+            <ul>
+                <li><strong>Contiguous Allocation:</strong> Files stored in contiguous blocks</li>
+                <ul>
+                    <li>Fast sequential access</li>
+                    <li>External fragmentation</li>
+                    <li>Pre-allocation of space</li>
+                </ul>
+                <li><strong>Linked Allocation:</strong> Each block points to next</li>
+                <ul>
+                    <li>No external fragmentation</li>
+                    <li>Slow random access</li>
+                    <li>File allocation table (FAT)</li>
+                </ul>
+                <li><strong>Indexed Allocation:</strong> Index block contains pointers</li>
+                <ul>
+                    <li>Fast random access</li>
+                    <li>Overhead of index blocks</li>
+                    <li>Supports large files</li>
+                </ul>
+            </ul>
+
+            <h4>9.9 Free Space Management</h4>
+            <ul>
+                <li><strong>Bit Vector:</strong> Bit for each block (1=free, 0=allocated)</li>
+                <li><strong>Linked List:</strong> List of free blocks</li>
+                <li><strong>Grouping:</strong> First free block contains addresses of others</li>
+                <li><strong>Counting:</strong> Store count of consecutive free blocks</li>
+            </ul>
+
+            <h4>9.10 I/O Hardware</h4>
+            <ul>
+                <li><strong>Devices:</strong> Block devices (disks), character devices (keyboards)</li>
+                <li><strong>Device Controllers:</strong> Interface between device and OS</li>
+                <li><strong>Direct Memory Access (DMA):</strong> Transfer data without CPU intervention</li>
+            </ul>
+
+            <h4>9.11 I/O Techniques</h4>
+            <ul>
+                <li><strong>Programmed I/O:</strong> CPU waits for I/O completion</li>
+                <li><strong>Interrupt-Driven I/O:</strong> Device interrupts CPU when done</li>
+                <li><strong>DMA:</strong> Direct transfer between device and memory</li>
+            </ul>
+
+            <h4>9.12 I/O Buffering</h4>
+            <ul>
+                <li><strong>Single Buffer:</strong> One buffer for I/O</li>
+                <li><strong>Double Buffer:</strong> Two buffers for overlapping I/O</li>
+                <li><strong>Circular Buffer:</strong> Ring buffer for continuous data</li>
+            </ul>
+
+            <p><strong>File Concepts:</strong> File attributes, operations, types, structure</p>
+            <p><strong>Directory Structure:</strong> Single-level, two-level, tree, acyclic graph</p>
+            <p><strong>Allocation Methods:</strong> Contiguous, linked, indexed allocation</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Design file system structure</li>
+                <li>Calculate disk access times</li>
+                <li>Implement file operations</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 11-12: Deadlocks</h3>
+        <div class="chapter-content">
+            <h4>11.1 Introduction to Deadlocks</h4>
+            <p>A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource held by another process.</p>
+
+            <h4>11.2 Deadlock Characteristics</h4>
+            <ul>
+                <li><strong>Mutual Exclusion:</strong> Resources cannot be shared</li>
+                <li><strong>Hold and Wait:</strong> Process holding resource waits for another</li>
+                <li><strong>No Preemption:</strong> Resources cannot be forcibly taken</li>
+                <li><strong>Circular Wait:</strong> Circular chain of processes waiting for resources</li>
+            </ul>
+
+            <h4>11.3 Resource Allocation Graph</h4>
+            <p>A directed graph representing processes and resources:</p>
+            <ul>
+                <li><strong>Process Node:</strong> Circle representing a process</li>
+                <li><strong>Resource Node:</strong> Rectangle representing a resource</li>
+                <li><strong>Request Edge:</strong> Process → Resource (process requesting resource)</li>
+                <li><strong>Assignment Edge:</strong> Resource → Process (resource assigned to process)</li>
+            </ul>
+
+            <h4>11.4 Deadlock Prevention</h4>
+            <p>Prevent deadlock by ensuring at least one condition cannot hold.</p>
+
+            <h5>11.4.1 Attack Mutual Exclusion</h5>
+            <ul>
+                <li>Use spooling for printers</li>
+                <li>Not practical for all resources</li>
+            </ul>
+
+            <h5>11.4.2 Attack Hold and Wait</h5>
+            <ul>
+                <li>Process must request all resources at once</li>
+                <li>Process releases all resources before requesting new ones</li>
+                <li>Low resource utilization</li>
+            </ul>
+
+            <h5>11.4.3 Attack No Preemption</h5>
+            <ul>
+                <li>Preempt resources from waiting processes</li>
+                <li>Process releases resources and restarts</li>
+                <li>Complex to implement</li>
+            </ul>
+
+            <h5>11.4.4 Attack Circular Wait</h5>
+            <ul>
+                <li>Impose ordering on resource types</li>
+                <li>Process requests resources in increasing order</li>
+                <li>Simple and effective</li>
+            </ul>
+
+            <h4>11.5 Deadlock Avoidance</h4>
+            <p>Avoid deadlock by making decisions based on current resource allocation state.</p>
+
+            <h4>11.6 Banker's Algorithm</h4>
+            <p>A deadlock avoidance algorithm that:</p>
+            <ul>
+                <li>Maintains available, allocation, max, need matrices</li>
+                <li>Grants request if system remains in safe state</li>
+                <li>Safe state: Sequence exists where all processes finish</li>
+                <li>Safe sequence: Order in which processes can complete</li>
+            </ul>
+
+            <h4>11.7 Deadlock Detection</h4>
+            <p>Allow deadlocks to occur, then detect and recover.</p>
+
+            <h5>11.7.1 Single Instance Resources</h5>
+            <ul>
+                <li>Use wait-for graph</li>
+                <li>Cycle indicates deadlock</li>
+            </ul>
+
+            <h5>11.7.2 Multiple Instance Resources</h5>
+            <ul>
+                <li>Use banker's algorithm periodically</li>
+                <li>Check for unsafe state</li>
+            </ul>
+
+            <h4>11.8 Deadlock Recovery</h4>
+            <ul>
+                <li><strong>Process Termination:</strong></li>
+                <ul>
+                    <li>Abort all deadlocked processes</li>
+                    <li>Abort one process at a time until cycle broken</li>
+                </ul>
+                <li><strong>Resource Preemption:</strong></li>
+                <ul>
+                    <li>Select victim process</li>
+                    <li>Preempt resources</li>
+                    <li>Rollback process to safe state</li>
+                </ul>
+            </ul>
+
+            <h4>11.9 Dining Philosophers Problem (Deadlock)</h4>
+            <p>Five philosophers with chopsticks between them. Each needs two chopsticks to eat.</p>
+            <ul>
+                <li><strong>Deadlock Solution:</strong> Resource hierarchy, allow only 4 philosophers, asymmetric solution</li>
+            </ul>
+
+            <h4>11.10 Livelock</h4>
+            <p>Processes are not blocked but cannot make progress. Example: Two processes changing direction in corridor.</p>
+
+            <h4>11.11 Starvation</h4>
+            <p>A process waits indefinitely for a resource. Solution: Aging, priority queues.</p>
+
+            <p><strong>Conditions:</strong> Mutual exclusion, hold and wait, no preemption, circular wait</p>
+            <p><strong>Handling:</strong> Prevention, avoidance (Banker's algorithm), detection, recovery</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Detect deadlocks in resource allocation graphs</li>
+                <li>Apply Banker's algorithm</li>
+                <li>Solve deadlock prevention problems</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>Operating System reference for BSc CS 2nd year - Pune University.</p>
+    </footer>
+</body>
+</html>

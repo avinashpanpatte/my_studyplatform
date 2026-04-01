@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering - Pune University BSc CS</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <p><a class="read-link" href="/" aria-label="Back to Library">← Back to Library</a></p>
+    <h1>🛠️ Software Engineering</h1>
+
+    <section class="syllabus">
+        <h2>Software Engineering Syllabus (Pune University)</h2>
+        <ul>
+            <li>Software development lifecycle (SDLC) models: Waterfall, Agile, Spiral, V-model</li>
+            <li>Requirements engineering and specification</li>
+            <li>Design: architectural patterns, UML diagrams, design principles</li>
+            <li>Software testing: unit, integration, system, acceptance, test cases</li>
+            <li>Software quality assurance and maintenance</li>
+            <li>Project management, risk management, configuration management</li>
+        </ul>
+    </section>
+
+    <section class="study-material">
+        <h2>📚 Recommended Textbooks</h2>
+        <div class="book-details">
+            <h3>"Software Engineering" by Ian Sommerville</h3>
+            <p><strong>Edition:</strong> 10th Global Edition</p>
+            <p><strong>Chapters for syllabus:</strong> 1-4, 6-8, 11-13, 17-19, 22-24</p>
+            <p><strong>Key features:</strong> Industry examples, case studies, practical approach</p>
+
+            <h3>"Software Engineering: A Practitioner's Approach" by Roger S. Pressman</h3>
+            <p><strong>Edition:</strong> 9th Edition</p>
+            <p><strong>Best for:</strong> Detailed process models, testing techniques, project management</p>
+            <p><strong>Strength:</strong> Comprehensive coverage with real-world examples</p>
+
+            <h3>"Fundamentals of Software Engineering" by Carlo Ghezzi, Mehdi Jazayeri, Dino Mandrioli</h3>
+            <p><strong>Focus:</strong> Theoretical foundations, formal methods</p>
+            <p><strong>Level:</strong> Advanced concepts for deeper understanding</p>
+        </div>
+
+        <h2>🛠️ Practical Resources</h2>
+        <ul>
+            <li><strong>Draw.io/diagrams.net:</strong> Free UML diagram creation tool</li>
+            <li><strong>GitHub:</strong> Version control and project collaboration</li>
+            <li><strong>JIRA/Trello:</strong> Project management tools</li>
+            <li><strong>Postman:</strong> API testing and documentation</li>
+            <li><strong>Selenium:</strong> Automated testing framework</li>
+        </ul>
+    </section>
+
+    <section class="core-topics">
+        <h2>Key Practical Skills</h2>
+        <ul>
+            <li>Make SRS (Software Requirement Specification) documents</li>
+            <li>Create use-case diagrams, class diagrams, sequence diagrams</li>
+            <li>Implement project diagrams in team assignments</li>
+            <li>Write structured test cases and traceability matrix</li>
+        </ul>
+    </section>
+
+    <section class="topic-explanations">
+        <h2>📖 Detailed Chapter Breakdown</h2>
+
+        <h3>Chapter 1-2: Introduction & Software Process</h3>
+        <div class="chapter-content">
+            <h4>1.1 What is Software Engineering?</h4>
+            <p>Software engineering is the application of engineering principles to software development. It involves systematic, disciplined, quantifiable approach to development, operation, and maintenance of software.</p>
+
+            <h4>1.2 Software Characteristics</h4>
+            <ul>
+                <li><strong>Complexity:</strong> Software is more complex than hardware</li>
+                <li><strong>Conformity:</strong> Must conform to many external constraints</li>
+                <li><strong>Changeability:</strong> Software is easy to change</li>
+                <li><strong>Invisibility:</strong> Software is not visible like hardware</li>
+            </ul>
+
+            <h4>1.3 Software Crisis</h4>
+            <p>The software crisis refers to the difficulties in writing correct, understandable, and verifiable computer programs. Problems:</p>
+            <ul>
+                <li>Projects running over budget</li>
+                <li>Projects running over time</li>
+                <li>Software was unreliable</li>
+                <li>Software was difficult to maintain</li>
+                <li>Software did not meet requirements</li>
+            </ul>
+
+            <h4>1.4 Software Process</h4>
+            <p>A software process is a set of activities required to develop a software system. It provides framework for managing activities.</p>
+
+            <h4>1.5 Software Development Life Cycle (SDLC)</h4>
+            <p>SDLC is a process followed for software development. Common phases:</p>
+            <ol>
+                <li><strong>Planning:</strong> Define scope, resources, timeline</li>
+                <li><strong>Requirements Analysis:</strong> Gather and analyze requirements</li>
+                <li><strong>Design:</strong> Create system and software design</li>
+                <li><strong>Implementation:</strong> Write the code</li>
+                <li><strong>Testing:</strong> Test the software</li>
+                <li><strong>Deployment:</strong> Release to production</li>
+                <li><strong>Maintenance:</strong> Fix bugs, add features</li>
+            </ol>
+
+            <h4>1.6 SDLC Models</h4>
+
+            <h5>1.6.1 Waterfall Model</h5>
+            <ul>
+                <li>Linear sequential model</li>
+                <li>Each phase completed before next begins</li>
+                <li>Advantages: Simple, easy to understand, phases well documented</li>
+                <li>Disadvantages: No working software until late, difficult to accommodate changes</li>
+            </ul>
+
+            <h5>1.6.2 Incremental Model</h5>
+            <ul>
+                <li>Software developed in increments</li>
+                <li>Each increment delivers working software</li>
+                <li>Advantages: Early delivery, less risk, easier to test and debug</li>
+                <li>Disadvantages: Requires good planning, total cost may be higher</li>
+            </ul>
+
+            <h5>1.6.3 Spiral Model</h5>
+            <ul>
+                <li>Combines waterfall and prototyping</li>
+                <li>Emphasizes risk analysis</li>
+                <li>Four phases: Determine objectives, Risk analysis, Development, Planning</li>
+                <li>Advantages: Risk handling, suitable for large projects</li>
+                <li>Disadvantages: Complex, requires risk assessment expertise</li>
+            </ul>
+
+            <h5>1.6.4 Agile Model</h5>
+            <ul>
+                <li>Iterative and incremental approach</li>
+                <li>Emphasizes customer collaboration, working software</li>
+                <li>Popular methodologies: Scrum, XP, Kanban</li>
+                <li>Advantages: Flexible, faster delivery, customer satisfaction</li>
+                <li>Disadvantages: Less predictability, requires experienced team</li>
+            </ul>
+
+            <h5>1.6.5 V-Model</h5>
+            <ul>
+                <li>Extension of waterfall model</li>
+                <li>Testing activities planned in parallel with development</li>
+                <li>Each development phase has corresponding test phase</li>
+                <li>Advantages: Verification and validation, early defect detection</li>
+            </ul>
+
+            <h5>1.6.6 Prototyping Model</h5>
+            <ul>
+                <li>Build prototype to understand requirements</li>
+                <li>Throw-away prototype vs Evolutionary prototype</li>
+                <li>Advantages: Better understanding of requirements, user involvement</li>
+                <li>Disadvantages: User may think prototype is final product</li>
+            </ul>
+
+            <h4>1.7 Process Activities</h4>
+            <ul>
+                <li><strong>Software Specification:</strong> Define what the system should do</li>
+                <li><strong>Software Design:</strong> Define how the system will do it</li>
+                <li><strong>Software Development:</strong> Implement the design</li>
+                <li><strong>Software Validation:</strong> Check if system meets requirements</li>
+                <li><strong>Software Evolution:</strong> Change system after delivery</li>
+            </ul>
+
+            <h4>1.8 Process Models vs Methodologies</h4>
+            <ul>
+                <li><strong>Process Model:</strong> Framework for development activities</li>
+                <li><strong>Methodology:</strong> Set of techniques for performing activities</li>
+            </ul>
+
+            <p><strong>SDLC Models:</strong> Waterfall, Incremental, Spiral, Agile, RAD, Prototyping</p>
+            <p><strong>Process Activities:</strong> Requirements, Design, Implementation, Testing, Deployment, Maintenance</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Compare SDLC models with advantages/disadvantages</li>
+                <li>Create process flow diagram for a project</li>
+                <li>Choose appropriate model for different scenarios</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 3-4: Requirements Engineering</h3>
+        <div class="chapter-content">
+            <h4>3.1 Introduction to Requirements Engineering</h4>
+            <p>Requirements engineering is the process of discovering, documenting, and maintaining a set of requirements for a computer-based system. It bridges the gap between system-level requirements and software design.</p>
+
+            <h4>3.2 Types of Requirements</h4>
+
+            <h5>3.2.1 Functional Requirements</h5>
+            <p>Describe what the system should do. They specify the functionality that the system must provide.</p>
+            <ul>
+                <li>System shall allow users to log in</li>
+                <li>System shall generate monthly reports</li>
+                <li>System shall validate user input</li>
+            </ul>
+
+            <h5>3.2.2 Non-Functional Requirements</h5>
+            <p>Describe how the system should behave. They specify quality attributes of the system.</p>
+            <ul>
+                <li><strong>Performance:</strong> Response time, throughput, availability</li>
+                <li><strong>Reliability:</strong> Mean time between failures, recoverability</li>
+                <li><strong>Security:</strong> Authentication, authorization, data protection</li>
+                <li><strong>Usability:</strong> Ease of use, user interface design</li>
+                <li><strong>Portability:</strong> Platform independence</li>
+                <li><strong>Maintainability:</strong> Ease of modification</li>
+            </ul>
+
+            <h5>3.2.3 Domain Requirements</h5>
+            <p>Requirements that come from the application domain of the system.</p>
+            <ul>
+                <li>Business rules</li>
+                <li>Regulatory requirements</li>
+                <li>Industry standards</li>
+            </ul>
+
+            <h4>3.3 Requirements Engineering Process</h4>
+            <ol>
+                <li><strong>Requirements Elicitation:</strong> Gather requirements from stakeholders</li>
+                <li><strong>Requirements Analysis:</strong> Analyze and refine requirements</li>
+                <li><strong>Requirements Specification:</strong> Document requirements</li>
+                <li><strong>Requirements Validation:</strong> Check requirements for correctness</li>
+                <li><strong>Requirements Management:</strong> Handle changes to requirements</li>
+            </ol>
+
+            <h4>3.4 Requirements Elicitation Techniques</h4>
+            <ul>
+                <li><strong>Interviews:</strong> One-on-one discussions with stakeholders</li>
+                <li><strong>Questionnaires:</strong> Written questions for large groups</li>
+                <li><strong>Observation:</strong> Watch users perform tasks</li>
+                <li><strong>Document Analysis:</strong> Study existing documents</li>
+                <li><strong>Prototyping:</strong> Build mock-ups to clarify requirements</li>
+                <li><strong>Use Cases:</strong> Describe interactions between users and system</li>
+                <li><strong>Brainstorming:</strong> Group discussion to generate ideas</li>
+            </ul>
+
+            <h4>3.5 Requirements Analysis</h4>
+            <ul>
+                <li><strong>Conflict Resolution:</strong> Resolve conflicting requirements</li>
+                <li><strong>Prioritization:</strong> Rank requirements by importance</li>
+                <li><strong>Feasibility Analysis:</strong> Check technical and economic feasibility</li>
+                <li><strong>Requirements Modeling:</strong> Create models to understand requirements</li>
+            </ul>
+
+            <h4>3.6 Requirements Specification</h4>
+            <p>Requirements specification is the process of writing down the requirements in a clear, unambiguous manner.</p>
+
+            <h4>3.7 Software Requirements Specification (SRS)</h4>
+            <p>SRS is a document that describes what the software will do and how it will perform. IEEE 830 standard defines SRS structure:</p>
+            <ul>
+                <li>Introduction</li>
+                <li>Overall description</li>
+                <li>Specific requirements</li>
+                <li>Appendices</li>
+            </ul>
+
+            <h4>3.8 Use Cases</h4>
+            <p>Use cases describe how users interact with the system to achieve goals.</p>
+            <ul>
+                <li><strong>Actor:</strong> User or external system</li>
+                <li><strong>Use Case:</strong> Sequence of actions</li>
+                <li><strong>Scenario:</strong> Specific path through use case</li>
+            </ul>
+
+            <h4>3.9 User Stories</h4>
+            <p>User stories are short, simple descriptions of a feature from the perspective of the user. Format: "As a [type of user], I want [some goal] so that [some reason]"</p>
+
+            <h4>3.10 Requirements Validation</h4>
+            <p>Validation ensures that requirements are:</p>
+            <ul>
+                <li>Complete: All requirements specified</li>
+                <li>Consistent: No conflicts between requirements</li>
+                <li>Unambiguous: Clear interpretation</li>
+                <li>Realistic: Achievable with available resources</li>
+                <li>Verifiable: Can be checked for satisfaction</li>
+                <li>Traceable: Can be traced to source</li>
+            </ul>
+
+            <h4>3.11 Requirements Validation Techniques</h4>
+            <ul>
+                <li><strong>Reviews:</strong> Manual inspection by experts</li>
+                <li><strong>Prototyping:</strong> Build prototype to validate requirements</li>
+                <li><strong>Model Validation:</strong> Check models for consistency</li>
+                <li><strong>Test Case Generation:</strong> Write tests based on requirements</li>
+            </ul>
+
+            <h4>3.12 Requirements Management</h4>
+            <ul>
+                <li><strong>Requirements Traceability:</strong> Track requirements from source to implementation</li>
+                <li><strong>Change Control:</strong> Manage changes to requirements</li>
+                <li><strong>Version Control:</strong> Maintain different versions of requirements</li>
+            </ul>
+
+            <p><strong>Types:</strong> Functional, Non-functional, Domain requirements</p>
+            <p><strong>Techniques:</strong> Interviews, questionnaires, observation, document analysis</p>
+            <p><strong>Documents:</strong> SRS, use cases, user stories</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Write SRS for library management system</li>
+                <li>Create use case diagrams</li>
+                <li>Identify functional requirements from user stories</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 5-6: System Design</h3>
+        <div class="chapter-content">
+            <h4>5.1 Introduction to System Design</h4>
+            <p>System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It bridges the gap between requirements and implementation.</p>
+
+            <h4>5.2 Design Principles</h4>
+            <ul>
+                <li><strong>Abstraction:</strong> Focus on essential features, hide details</li>
+                <li><strong>Modularity:</strong> Divide system into independent modules</li>
+                <li><strong>Information Hiding:</strong> Hide implementation details</li>
+                <li><strong>Separation of Concerns:</strong> Divide system into distinct features</li>
+                <li><strong>Anticipation of Change:</strong> Design for future modifications</li>
+                <li><strong>Generality:</strong> Design for broader applicability</li>
+                <li><strong>Incrementality:</strong> Design in small increments</li>
+            </ul>
+
+            <h4>5.3 Architectural Design</h4>
+            <p>Architectural design defines the overall structure of the system. It identifies the main components and their relationships.</p>
+
+            <h4>5.4 Architectural Patterns</h4>
+
+            <h5>5.4.1 Layered Architecture</h5>
+            <ul>
+                <li>System organized in layers</li>
+                <li>Each layer provides services to layer above</li>
+                <li>Examples: OSI model, TCP/IP stack</li>
+                <li>Advantages: Abstraction, maintainability</li>
+            </ul>
+
+            <h5>5.4.2 Client-Server Architecture</h5>
+            <ul>
+                <li>Client requests services from server</li>
+                <li>Server provides services to clients</li>
+                <li>Examples: Web applications, database systems</li>
+                <li>Advantages: Centralized control, scalability</li>
+            </ul>
+
+            <h5>5.4.3 Model-View-Controller (MVC)</h5>
+            <ul>
+                <li><strong>Model:</strong> Data and business logic</li>
+                <li><strong>View:</strong> User interface</li>
+                <li><strong>Controller:</strong> Handles user input, updates model</li>
+                <li>Advantages: Separation of concerns, reusability</li>
+            </ul>
+
+            <h5>5.4.4 Microservices Architecture</h5>
+            <ul>
+                <li>System composed of small, independent services</li>
+                <li>Each service runs in its own process</li>
+                <li>Services communicate via APIs</li>
+                <li>Advantages: Scalability, technology diversity, fault isolation</li>
+            </ul>
+
+            <h5>5.4.5 Repository Architecture</h5>
+            <ul>
+                <li>Central data store with independent components</li>
+                <li>Components access data through repository</li>
+                <li>Examples: Database systems, compilers</li>
+            </ul>
+
+            <h4>5.5 Unified Modeling Language (UML)</h4>
+            <p>UML is a standard language for specifying, visualizing, constructing, and documenting software systems.</p>
+
+            <h4>5.6 Structural Diagrams</h4>
+            <ul>
+                <li><strong>Class Diagram:</strong> Shows classes, attributes, operations, relationships</li>
+                <li><strong>Object Diagram:</strong> Shows objects and their relationships at runtime</li>
+                <li><strong>Component Diagram:</strong> Shows components and their dependencies</li>
+                <li><strong>Deployment Diagram:</strong> Shows physical deployment of artifacts</li>
+                <li><strong>Package Diagram:</strong> Shows package organization</li>
+            </ul>
+
+            <h4>5.7 Behavioral Diagrams</h4>
+            <ul>
+                <li><strong>Use Case Diagram:</strong> Shows actors and use cases</li>
+                <li><strong>Sequence Diagram:</strong> Shows interaction between objects over time</li>
+                <li><strong>Collaboration Diagram:</strong> Shows object interactions</li>
+                <li><strong>State Diagram:</strong> Shows states and transitions</li>
+                <li><strong>Activity Diagram:</strong> Shows workflow and activities</li>
+            </ul>
+
+            <h4>5.8 Design Patterns</h4>
+            <p>Design patterns are reusable solutions to common software design problems.</p>
+
+            <h5>5.8.1 Creational Patterns</h5>
+            <ul>
+                <li><strong>Singleton:</strong> Ensures only one instance of a class</li>
+                <li><strong>Factory:</strong> Creates objects without specifying exact class</li>
+                <li><strong>Abstract Factory:</strong> Creates families of related objects</li>
+                <li><strong>Builder:</strong> Separates construction from representation</li>
+                <li><strong>Prototype:</strong> Creates objects by cloning existing ones</li>
+            </ul>
+
+            <h5>5.8.2 Structural Patterns</h5>
+            <ul>
+                <li><strong>Adapter:</strong> Converts interface of a class to another interface</li>
+                <li><strong>Decorator:</strong> Adds responsibilities to objects dynamically</li>
+                <li><strong>Facade:</strong> Provides unified interface to subsystem</li>
+                <li><strong>Proxy:</strong> Provides placeholder for another object</li>
+                <li><strong>Composite:</strong> Composes objects into tree structures</li>
+            </ul>
+
+            <h5>5.8.3 Behavioral Patterns</h5>
+            <ul>
+                <li><strong>Observer:</strong> Defines dependency between objects</li>
+                <li><strong>Strategy:</strong> Encapsulates algorithms</li>
+                <li><strong>Command:</strong> Encapsulates requests as objects</li>
+                <li><strong>Iterator:</strong> Provides way to access elements sequentially</li>
+                <li><strong>Template Method:</strong> Defines skeleton of algorithm</li>
+            </ul>
+
+            <h4>5.9 Interface Design</h4>
+            <ul>
+                <li><strong>User Interface Design:</strong> Design for human-computer interaction</li>
+                <li><strong>API Design:</strong> Design for component interaction</li>
+                <li><strong>Data Interface:</strong> Design for data exchange</li>
+            </ul>
+
+            <h4>5.10 Data Design</h4>
+            <ul>
+                <li><strong>Data Modeling:</strong> ER diagrams, class diagrams</li>
+                <li><strong>Data Structures:</strong> Arrays, lists, trees, graphs</li>
+                <li><strong>Database Design:</strong> Normalization, indexing</li>
+            </ul>
+
+            <h4>5.11 Component-Level Design</h4>
+            <p>Component-level design defines the internal structure of each software component.</p>
+            <ul>
+                <li>Algorithm design</li>
+                <li>Data structure design</li>
+                <li>Interface specification</li>
+            </ul>
+
+            <p><strong>Architectural Design:</strong> Layered, Client-server, MVC, Microservices</p>
+            <p><strong>UML Diagrams:</strong> Class, Sequence, Activity, State diagrams</p>
+            <p><strong>Design Patterns:</strong> Singleton, Factory, Observer, Strategy</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Design class diagrams for banking system</li>
+                <li>Create sequence diagrams for user authentication</li>
+                <li>Apply design patterns to solve problems</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 7-8: Software Testing</h3>
+        <div class="chapter-content">
+            <h4>7.1 Introduction to Software Testing</h4>
+            <p>Software testing is the process of evaluating a software system to find differences between expected and actual results. The goal is to identify defects and ensure quality.</p>
+
+            <h4>7.2 Testing Objectives</h4>
+            <ul>
+                <li>Find defects</li>
+                <li>Gain confidence in software quality</li>
+                <li>Prevent defects from reaching users</li>
+                <li>Provide information for decision making</li>
+            </ul>
+
+            <h4>7.3 Testing Principles</h4>
+            <ul>
+                <li>Testing shows presence of defects, not absence</li>
+                <li>Exhaustive testing is impossible</li>
+                <li>Early testing is essential</li>
+                <li>Defects cluster together</li>
+                <li>Pesticide paradox: Tests become ineffective over time</li>
+                <li>Testing is context dependent</li>
+                <li>Absence of errors fallacy: Zero defects doesn't mean good software</li>
+            </ul>
+
+            <h4>7.4 Testing Levels</h4>
+
+            <h5>7.4.1 Unit Testing</h5>
+            <ul>
+                <li>Tests individual components or modules</li>
+                <li>Usually done by developers</li>
+                <li>White-box testing approach</li>
+                <li>Tools: JUnit, NUnit, PyTest</li>
+            </ul>
+
+            <h5>7.4.2 Integration Testing</h5>
+            <ul>
+                <li>Tests interaction between integrated units</li>
+                <li>Approaches: Big Bang, Top-down, Bottom-up, Sandwich</li>
+                <li>Finds interface defects</li>
+            </ul>
+
+            <h5>7.4.3 System Testing</h5>
+            <ul>
+                <li>Tests complete integrated system</li>
+                <li>Validates against system requirements</li>
+                <li>Includes functional and non-functional testing</li>
+            </ul>
+
+            <h5>7.4.4 Acceptance Testing</h5>
+            <ul>
+                <li>Tests conducted by end users</li>
+                <li>Validates system meets user requirements</li>
+                <li>Types: Alpha, Beta, Gamma testing</li>
+            </ul>
+
+            <h4>7.5 Testing Types</h4>
+
+            <h5>7.5.1 Black-Box Testing</h5>
+            <ul>
+                <li>Tests functionality without knowing internal code</li>
+                <li>Based on requirements and specifications</li>
+                <li>Techniques: Equivalence partitioning, Boundary value analysis</li>
+            </ul>
+
+            <h5>7.5.2 White-Box Testing</h5>
+            <ul>
+                <li>Tests internal code structure and logic</li>
+                <li>Requires knowledge of code</li>
+                <li>Techniques: Statement coverage, Branch coverage, Path coverage</li>
+            </ul>
+
+            <h5>7.5.3 Gray-Box Testing</h5>
+            <ul>
+                <li>Combination of black-box and white-box testing</li>
+                <li>Tester has partial knowledge of internal structure</li>
+            </ul>
+
+            <h4>7.6 Test Case Design Techniques</h4>
+
+            <h5>7.6.1 Equivalence Partitioning</h5>
+            <ul>
+                <li>Divide input data into valid and invalid partitions</li>
+                <li>Test one value from each partition</li>
+                <li>Reduces number of test cases</li>
+            </ul>
+
+            <h5>7.6.2 Boundary Value Analysis</h5>
+            <ul>
+                <li>Test boundaries of input ranges</li>
+                <li>Test values at boundaries: min, min+1, max-1, max</li>
+                <li>Defects often occur at boundaries</li>
+            </ul>
+
+            <h5>7.6.3 Decision Table Testing</h5>
+            <ul>
+                <li>Used for complex business logic</li>
+                <li>Shows combinations of conditions and actions</li>
+                <li>Systematic way to test all combinations</li>
+            </ul>
+
+            <h5>7.6.4 State Transition Testing</h5>
+            <ul>
+                <li>Tests state changes in response to events</li>
+                <li>Uses state transition diagrams</li>
+                <li>Tests valid and invalid transitions</li>
+            </ul>
+
+            <h5>7.6.5 Use Case Testing</h5>
+            <ul>
+                <li>Tests based on use cases</li>
+                <li>Covers main flow and alternative flows</li>
+                <li>Tests both positive and negative scenarios</li>
+            </ul>
+
+            <h4>7.7 Coverage Criteria</h4>
+            <ul>
+                <li><strong>Statement Coverage:</strong> Every statement executed at least once</li>
+                <li><strong>Branch Coverage:</strong> Every branch (true/false) tested</li>
+                <li><strong>Path Coverage:</strong> Every possible path through code</li>
+                <li><strong>Function Coverage:</strong> Every function called</li>
+                <li><strong>Condition Coverage:</strong> Every condition evaluated</li>
+            </ul>
+
+            <h4>7.8 Regression Testing</h4>
+            <p>Testing to ensure that recent changes don't break existing functionality.</p>
+            <ul>
+                <li>Performed after fixes or enhancements</li>
+                <li>Uses existing test cases</li>
+                <li>Automated regression test suites</li>
+            </ul>
+
+            <h4>7.9 Performance Testing</h4>
+            <ul>
+                <li><strong>Load Testing:</strong> Tests under expected load</li>
+                <li><strong>Stress Testing:</strong> Tests under extreme conditions</li>
+                <li><strong>Volume Testing:</strong> Tests with large data volumes</li>
+                <li><strong>Scalability Testing:</strong> Tests ability to scale</li>
+            </ul>
+
+            <h4>7.10 Test Management</h4>
+            <ul>
+                <li><strong>Test Planning:</strong> Define scope, approach, resources</li>
+                <li><strong>Test Execution:</strong> Run tests, log results</li>
+                <li><strong>Defect Tracking:</strong> Report and track defects</li>
+                <li><strong>Test Reporting:</strong> Communicate test results</li>
+            </ul>
+
+            <h4>7.11 Test Automation</h4>
+            <ul>
+                <li>Benefits: Faster execution, repeatability, coverage</li>
+                <li>Tools: Selenium, JUnit, TestNG, Cucumber</li>
+                <li>When to automate: Repetitive tests, regression tests</li>
+            </ul>
+
+            <p><strong>Testing Levels:</strong> Unit, Integration, System, Acceptance</p>
+            <p><strong>Testing Types:</strong> Black-box, White-box, Regression, Performance</p>
+            <p><strong>Test Case Design:</strong> Equivalence partitioning, Boundary value analysis</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Write comprehensive test cases</li>
+                <li>Perform equivalence class partitioning</li>
+                <li>Create test plans for mini-projects</li>
+                <li>Practice defect reporting</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 9-10: Project Management</h3>
+        <div class="chapter-content">
+            <h4>9.1 Introduction to Software Project Management</h4>
+            <p>Software project management involves planning, organizing, and managing resources to successfully complete software projects within time, budget, and quality constraints.</p>
+
+            <h4>9.2 Project Management Activities</h4>
+            <ul>
+                <li><strong>Project Planning:</strong> Define scope, objectives, resources</li>
+                <li><strong>Project Scheduling:</strong> Create timeline and milestones</li>
+                <li><strong>Project Monitoring:</strong> Track progress and performance</li>
+                <li><strong>Risk Management:</strong> Identify and mitigate risks</li>
+                <li><strong>Quality Management:</strong> Ensure quality standards</li>
+                <li><strong>Configuration Management:</strong> Control changes</li>
+                <li><strong>People Management:</strong> Manage team and stakeholders</li>
+            </ul>
+
+            <h4>9.3 Project Planning</h4>
+
+            <h5>9.3.1 Work Breakdown Structure (WBS)</h5>
+            <ul>
+                <li>Break down project into manageable tasks</li>
+                <li>Hierarchical decomposition</li>
+                <li>Helps in estimation and scheduling</li>
+            </ul>
+
+            <h5>9.3.2 Effort Estimation</h5>
+            <p>Estimate the effort required to complete the project.</p>
+            <ul>
+                <li><strong>Expert Judgment:</strong> Based on experience</li>
+                <li><strong>Analogous Estimation:</strong> Use similar past projects</li>
+                <li><strong>Parametric Estimation:</strong> Use mathematical models</li>
+                <li><strong>Bottom-up Estimation:</strong> Estimate individual tasks</li>
+            </ul>
+
+            <h4>9.4 COCOMO Model</h4>
+            <p>Constructive Cost Model estimates effort based on lines of code.</p>
+            <ul>
+                <li><strong>Basic COCOMO:</strong> Effort = a × (KLOC)^b</li>
+                <li><strong>Intermediate COCOMO:</strong> Includes cost drivers</li>
+                <li><strong>Detailed COCOMO:</strong> Phase-wise estimation</li>
+            </ul>
+
+            <h4>9.5 Function Point Analysis</h4>
+            <p>Estimates size based on functionality provided to user.</p>
+            <ul>
+                <li>Counts inputs, outputs, inquiries, files, interfaces</li>
+                <li>Adjusts for complexity</li>
+                <li>Independent of technology</li>
+            </ul>
+
+            <h4>9.6 Project Scheduling</h4>
+            <ul>
+                <li><strong>Gantt Charts:</strong> Show tasks and timelines</li>
+                <li><strong>PERT Charts:</strong> Show task dependencies</li>
+                <li><strong>Critical Path Method (CPM):</strong> Identify critical tasks</li>
+            </ul>
+
+            <h4>9.7 Risk Management</h4>
+            <p>Risk management involves identifying, analyzing, and mitigating risks.</p>
+
+            <h5>9.7.1 Risk Identification</h5>
+            <ul>
+                <li>Technical risks</li>
+                <li>Project risks</li>
+                <li>Business risks</li>
+                <li>External risks</li>
+            </ul>
+
+            <h5>9.7.2 Risk Analysis</h5>
+            <ul>
+                <li><strong>Risk Probability:</strong> Likelihood of occurrence</li>
+                <li><strong>Risk Impact:</strong> Effect on project if occurs</li>
+                <li><strong>Risk Exposure:</strong> Probability × Impact</li>
+            </ul>
+
+            <h5>9.7.3 Risk Mitigation</h5>
+            <ul>
+                <li><strong>Avoidance:</strong> Change plan to avoid risk</li>
+                <li><strong>Reduction:</strong> Take actions to reduce probability/impact</li>
+                <li><strong>Transfer:</strong> Transfer risk to third party</li>
+                <li><strong>Acceptance:</strong> Accept risk and prepare contingency</li>
+            </ul>
+
+            <h4>9.8 Quality Management</h4>
+            <p>Quality management ensures that software meets quality standards.</p>
+
+            <h5>9.8.1 Quality Assurance (QA)</h5>
+            <ul>
+                <li>Process-oriented activities</li>
+                <li>Prevent defects</li>
+                <li>Standards and procedures</li>
+            </ul>
+
+            <h5>9.8.2 Quality Control (QC)</h5>
+            <ul>
+                <li>Product-oriented activities</li>
+                <li>Detect and fix defects</li>
+                <li>Testing and reviews</li>
+            </ul>
+
+            <h4>9.9 Reviews and Audits</h4>
+            <ul>
+                <li><strong>Walkthrough:</strong> Informal review by author</li>
+                <li><strong>Technical Review:</strong> Formal review by experts</li>
+                <li><strong>Inspection:</strong> Formal, structured review</li>
+                <li><strong>Audit:</strong> Independent assessment</li>
+            </ul>
+
+            <h4>9.10 Software Metrics</h4>
+            <ul>
+                <li><strong>Product Metrics:</strong> Size, complexity, quality</li>
+                <li><strong>Process Metrics:</strong> Effort, time, defects</li>
+                <li><strong>Project Metrics:</strong> Productivity, quality</li>
+            </ul>
+
+            <h4>9.11 Configuration Management</h4>
+            <p>Configuration management controls changes to software artifacts.</p>
+            <ul>
+                <li><strong>Version Control:</strong> Track changes to files</li>
+                <li><strong>Change Control:</strong> Manage change requests</li>
+                <li><strong>Build Management:</strong> Automate builds</li>
+                <li><strong>Release Management:</strong> Manage releases</li>
+            </ul>
+
+            <h4>9.12 People Management</h4>
+            <ul>
+                <li><strong>Team Structure:</strong> Hierarchical, flat, matrix</li>
+                <li><strong>Motivation:</strong> Maslow's hierarchy, Herzberg's theory</li>
+                <li><strong>Communication:</strong> Regular meetings, status reports</li>
+                <li><strong>Training:</strong> Skill development</li>
+            </ul>
+
+            <h4>9.13 Agile Project Management</h4>
+            <ul>
+                <li><strong>Scrum:</strong> Sprints, daily standups, retrospectives</li>
+                <li><strong>Kanban:</strong> Visualize workflow, limit work in progress</li>
+                <li><strong>XP:</strong> Pair programming, test-driven development</li>
+            </ul>
+
+            <p><strong>Planning:</strong> Work breakdown, effort estimation, scheduling</p>
+            <p><strong>Risk Management:</strong> Risk identification, assessment, mitigation</p>
+            <p><strong>Quality Assurance:</strong> Reviews, audits, metrics, standards</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Create project plan with Gantt chart</li>
+                <li>Perform COCOMO estimation</li>
+                <li>Identify and mitigate project risks</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>Software Engineering reference for BSc CS 2nd year - Pune University.</p>
+    </footer>
+</body>
+</html>

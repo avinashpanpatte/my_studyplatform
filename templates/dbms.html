@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS - Pune University BSc CS</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <p><a class="read-link" href="/" aria-label="Back to Library">← Back to Library</a></p>
+    <h1>🗄️ DBMS (Database Management System)</h1>
+
+    <section class="syllabus">
+        <h2>DBMS Syllabus (Pune University)</h2>
+        <ul>
+            <li>Introduction to DBMS: data models, schemas, instances</li>
+            <li>ER modeling, relational model, constraints</li>
+            <li>Relational algebra, SQL (DDL, DML, DCL)</li>
+            <li>Normalization (1NF, 2NF, 3NF, BCNF)</li>
+            <li>Transaction management, concurrency control and recovery</li>
+            <li>Indexing, file organization, query optimization</li>
+        </ul>
+    </section>
+
+    <section class="study-material">
+        <h2>📚 Recommended Textbooks</h2>
+        <div class="book-details">
+            <h3>"Database System Concepts" by Abraham Silberschatz, Henry F. Korth, S. Sudarshan</h3>
+            <p><strong>Edition:</strong> 7th Edition (most recent)</p>
+            <p><strong>Chapters for syllabus:</strong> 1-3, 6-8, 10-12, 14-16, 17-19</p>
+            <p><strong>Key features:</strong> Comprehensive coverage, real-world examples, excellent for theory</p>
+
+            <h3>"Fundamentals of Database Systems" by Ramez Elmasri, Shamkant B. Navathe</h3>
+            <p><strong>Edition:</strong> 7th Edition</p>
+            <p><strong>Best for:</strong> ER modeling, normalization, SQL practical examples</p>
+            <p><strong>Strength:</strong> Step-by-step explanations, case studies</p>
+
+            <h3>"Database Management Systems" by Raghu Ramakrishnan, Johannes Gehrke</h3>
+            <p><strong>Focus:</strong> Query optimization, transaction management, advanced concepts</p>
+            <p><strong>Level:</strong> Advanced undergraduate level</p>
+        </div>
+
+        <h2>🛠️ Practical Resources</h2>
+        <ul>
+            <li><strong>MySQL/PostgreSQL:</strong> Free database software for practice</li>
+            <li><strong>SQLZoo:</strong> Interactive SQL learning platform</li>
+            <li><strong>LeetCode Database:</strong> SQL query problems</li>
+            <li><strong>DBMS Lab Manual:</strong> Pune University practical assignments</li>
+            <li><strong>phpMyAdmin:</strong> Web-based database administration</li>
+        </ul>
+    </section>
+
+    <section class="core-topics">
+        <h2>Key Practical Skills</h2>
+        <ul>
+            <li>Design ER diagrams from case studies</li>
+            <li>Convert ER to Relational schema</li>
+            <li>Write complex SQL queries with joins and nested queries</li>
+            <li>Understand ACID, 2PL, deadlock handling</li>
+            <li>Implement simple indexing and query plan analysis</li>
+        </ul>
+    </section>
+
+    <section class="topic-explanations">
+        <h2>📖 Detailed Chapter Breakdown</h2>
+
+        <h3>Chapter 1-2: Introduction & ER Model</h3>
+        <div class="chapter-content">
+            <h4>1.1 Introduction to DBMS</h4>
+            <p>A Database Management System (DBMS) is software that enables users to define, create, maintain, and control access to databases. It provides an interface between the database and end users or application programs.</p>
+
+            <h4>1.2 Data Models</h4>
+            <ul>
+                <li><strong>Hierarchical Model:</strong> Tree-like structure with parent-child relationships</li>
+                <li><strong>Network Model:</strong> Allows many-to-many relationships</li>
+                <li><strong>Relational Model:</strong> Data organized in tables with relationships</li>
+                <li><strong>Object-Oriented Model:</strong> Objects and classes with inheritance</li>
+                <li><strong>Object-Relational Model:</strong> Combines relational and object-oriented features</li>
+            </ul>
+
+            <h4>1.3 Database Schema and Instance</h4>
+            <p><strong>Schema:</strong> Logical structure of the database (metadata)</p>
+            <ul>
+                <li>Physical schema: Storage details</li>
+                <li>Logical schema: Tables, views, constraints</li>
+                <li>External schema: User views</li>
+            </ul>
+            <p><strong>Instance:</strong> Actual data stored at a particular time</p>
+
+            <h4>1.4 Entity-Relationship Model</h4>
+            <p>The ER model is a conceptual data model that describes the structure of a database using entities, attributes, and relationships.</p>
+
+            <h4>1.5 Entities and Attributes</h4>
+            <p><strong>Entity:</strong> Real-world object distinguishable from other objects</p>
+            <p><strong>Entity Set:</strong> Collection of similar entities</p>
+            <p><strong>Attributes:</strong> Properties that describe entities</p>
+            <ul>
+                <li>Simple vs Composite attributes</li>
+                <li>Single-valued vs Multi-valued attributes</li>
+                <li>Derived attributes</li>
+                <li>Key attributes (Primary key, Candidate key, Foreign key)</li>
+            </ul>
+
+            <h4>1.6 Relationships</h4>
+            <p><strong>Relationship:</strong> Association between entities</p>
+            <p><strong>Relationship Set:</strong> Collection of similar relationships</p>
+            <p><strong>Degree of Relationship:</strong></p>
+            <ul>
+                <li>Unary (Recursive): Entity relates to itself</li>
+                <li>Binary: Two entities</li>
+                <li>Ternary: Three entities</li>
+            </ul>
+
+            <h4>1.7 Cardinality Constraints</h4>
+            <ul>
+                <li><strong>One-to-One (1:1):</strong> Each entity in A associates with at most one entity in B</li>
+                <li><strong>One-to-Many (1:N):</strong> Each entity in A associates with many entities in B</li>
+                <li><strong>Many-to-Many (M:N):</strong> Entities in A associate with many entities in B and vice versa</li>
+            </ul>
+
+            <h4>1.8 Participation Constraints</h4>
+            <ul>
+                <li><strong>Total Participation:</strong> Every entity must participate in the relationship (double line in ER diagram)</li>
+                <li><strong>Partial Participation:</strong> Some entities may not participate in the relationship</li>
+            </ul>
+
+            <h4>1.9 Weak Entities</h4>
+            <p>Entities that cannot be uniquely identified by their own attributes and depend on another entity for identification.</p>
+            <p><strong>Identifying Relationship:</strong> Relationship that connects weak entity to its owner entity</p>
+
+            <h4>1.10 Specialization and Generalization</h4>
+            <p><strong>Generalization:</strong> Bottom-up approach, combines similar entities into a higher-level entity</p>
+            <p><strong>Specialization:</strong> Top-down approach, creates subclasses from a higher-level entity</p>
+
+            <p><strong>Key Concepts:</strong> Data models, schemas, instances, ER diagrams, entities, attributes, relationships</p>
+            <p><strong>Cardinality:</strong> 1:1, 1:N, M:N relationships with examples</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Draw ER diagram for library management system</li>
+                <li>Convert ER to relational schema</li>
+                <li>Identify weak entities and generalization</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 3-4: Relational Model & SQL</h3>
+        <div class="chapter-content">
+            <h4>3.1 Relational Model</h4>
+            <p>The relational model represents data as relations (tables). Each relation consists of tuples (rows) and attributes (columns).</p>
+
+            <h4>3.2 Relational Database Structure</h4>
+            <ul>
+                <li><strong>Relation:</strong> Table with rows and columns</li>
+                <li><strong>Tuple:</strong> Row in a relation</li>
+                <li><strong>Attribute:</strong> Column in a relation</li>
+                <li><strong>Domain:</strong> Set of allowed values for an attribute</li>
+                <li><strong>Degree:</strong> Number of attributes in a relation</li>
+                <li><strong>Cardinality:</strong> Number of tuples in a relation</li>
+            </ul>
+
+            <h4>3.3 Keys in Relational Model</h4>
+            <ul>
+                <li><strong>Candidate Key:</strong> Minimal set of attributes that uniquely identify a tuple</li>
+                <li><strong>Primary Key:</strong> Chosen candidate key to uniquely identify tuples</li>
+                <li><strong>Super Key:</strong> Set of attributes that uniquely identify a tuple (may not be minimal)</li>
+                <li><strong>Foreign Key:</strong> Attribute that references primary key of another relation</li>
+                <li><strong>Alternate Key:</strong> Candidate keys not chosen as primary key</li>
+                <li><strong>Composite Key:</strong> Primary key consisting of multiple attributes</li>
+            </ul>
+
+            <h4>3.4 Integrity Constraints</h4>
+            <ul>
+                <li><strong>Domain Constraint:</strong> Values must be from the domain</li>
+                <li><strong>Entity Integrity:</strong> Primary key cannot be null</li>
+                <li><strong>Referential Integrity:</strong> Foreign key must reference existing primary key or be null</li>
+                <li><strong>Key Constraint:</strong> No duplicate values in primary key</li>
+            </ul>
+
+            <h4>3.5 Relational Algebra</h4>
+            <p>Relational algebra is a procedural query language that takes relations as input and produces relations as output.</p>
+
+            <h4>3.6 Fundamental Operations</h4>
+            <ul>
+                <li><strong>Select (σ):</strong> Selects tuples that satisfy a condition. σ_condition(R)</li>
+                <li><strong>Project (π):</strong> Selects specific columns. π_attributes(R)</li>
+                <li><strong>Union (∪):</strong> Combines tuples from two relations. R ∪ S</li>
+                <li><strong>Intersection (∩):</strong> Tuples common to both relations. R ∩ S</li>
+                <li><strong>Difference (-):</strong> Tuples in R but not in S. R - S</li>
+                <li><strong>Cartesian Product (×):</strong> All possible combinations of tuples. R × S</li>
+            </ul>
+
+            <h4>3.7 Additional Operations</h4>
+            <ul>
+                <li><strong>Join:</strong> Combines related tuples from two relations</li>
+                <ul>
+                    <li><strong>Inner Join:</strong> Only matching tuples</li>
+                    <li><strong>Left Join:</strong> All tuples from left, matching from right</li>
+                    <li><strong>Right Join:</strong> All tuples from right, matching from left</li>
+                    <li><strong>Full Join:</strong> All tuples from both relations</li>
+                </ul>
+                <li><strong>Division (÷):</strong> For queries like "find students who have taken all courses"</li>
+                <li><strong>Rename (ρ):</strong> Renames relation or attributes</li>
+            </ul>
+
+            <h4>3.8 Structured Query Language (SQL)</h4>
+            <p>SQL is a standard language for managing relational databases. It includes DDL, DML, DCL, and DQL.</p>
+
+            <h4>3.9 Data Definition Language (DDL)</h4>
+            <ul>
+                <li><strong>CREATE:</strong> Create database objects (tables, views, indexes)</li>
+                <pre><code>CREATE TABLE Student (
+    roll_no INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);</code></pre>
+                <li><strong>ALTER:</strong> Modify structure of existing objects</li>
+                <pre><code>ALTER TABLE Student ADD email VARCHAR(100);</code></pre>
+                <li><strong>DROP:</strong> Delete database objects</li>
+                <pre><code>DROP TABLE Student;</code></pre>
+                <li><strong>TRUNCATE:</strong> Remove all data from table but keep structure</li>
+            </ul>
+
+            <h4>3.10 Data Manipulation Language (DML)</h4>
+            <ul>
+                <li><strong>INSERT:</strong> Add new records</li>
+                <pre><code>INSERT INTO Student VALUES (1, 'John', 20);</code></pre>
+                <li><strong>UPDATE:</strong> Modify existing records</li>
+                <pre><code>UPDATE Student SET age = 21 WHERE roll_no = 1;</code></pre>
+                <li><strong>DELETE:</strong> Remove records</li>
+                <pre><code>DELETE FROM Student WHERE age < 18;</code></pre>
+            </ul>
+
+            <h4>3.11 Data Query Language (DQL)</h4>
+            <p><strong>SELECT:</strong> Retrieve data from database</p>
+            <pre><code>SELECT column1, column2 FROM table_name
+WHERE condition
+ORDER BY column_name
+GROUP BY column_name
+HAVING condition;</code></pre>
+
+            <h4>3.12 Advanced SQL Concepts</h4>
+            <ul>
+                <li><strong>Aggregate Functions:</strong> COUNT, SUM, AVG, MIN, MAX</li>
+                <li><strong>GROUP BY:</strong> Group rows with same values</li>
+                <li><strong>HAVING:</strong> Filter groups based on conditions</li>
+                <li><strong>Subqueries:</strong> Nested queries</li>
+                <li><strong>Views:</strong> Virtual tables based on SELECT queries</li>
+                <li><strong>Indexes:</strong> Improve query performance</li>
+            </ul>
+
+            <h4>3.13 Data Control Language (DCL)</h4>
+            <ul>
+                <li><strong>GRANT:</strong> Give permissions to users</li>
+                <li><strong>REVOKE:</strong> Remove permissions from users</li>
+            </ul>
+
+            <p><strong>Relational Algebra:</strong> Select, Project, Join, Union, Intersection, Difference</p>
+            <p><strong>SQL Commands:</strong> DDL (CREATE, ALTER, DROP), DML (INSERT, UPDATE, DELETE), DQL (SELECT)</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Write SQL queries for complex joins</li>
+                <li>Create database schema for university system</li>
+                <li>Implement nested queries and subqueries</li>
+                <li>Practice aggregate functions and GROUP BY</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 5-6: Normalization</h3>
+        <div class="chapter-content">
+            <h4>5.1 Introduction to Normalization</h4>
+            <p>Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. It involves decomposing a relation into smaller relations that satisfy certain normal forms.</p>
+
+            <h4>5.2 Functional Dependencies</h4>
+            <p>A functional dependency (FD) is a constraint between two sets of attributes in a relation. If A → B, then for each value of A, there is exactly one value of B.</p>
+            <ul>
+                <li><strong>Trivial FD:</strong> B ⊆ A (e.g., AB → A)</li>
+                <li><strong>Non-trivial FD:</strong> B ⊈ A</li>
+                <li><strong>Completely non-trivial FD:</strong> A ∩ B = ∅</li>
+            </ul>
+
+            <h4>5.3 Types of Functional Dependencies</h4>
+            <ul>
+                <li><strong>Partial Dependency:</strong> A non-key attribute depends on part of the primary key</li>
+                <li><strong>Transitive Dependency:</strong> A non-key attribute depends on another non-key attribute</li>
+                <li><strong>Multivalued Dependency:</strong> One attribute determines multiple independent values</li>
+            </ul>
+
+            <h4>5.4 Normal Forms</h4>
+
+            <h5>5.4.1 First Normal Form (1NF)</h5>
+            <p>A relation is in 1NF if:</p>
+            <ul>
+                <li>All attributes contain atomic (indivisible) values</li>
+                <li>No repeating groups or arrays</li>
+                <li>Each column contains values of a single type</li>
+            </ul>
+            <p><strong>Example:</strong> Student table with multiple phone numbers should be split.</p>
+
+            <h5>5.4.2 Second Normal Form (2NF)</h5>
+            <p>A relation is in 2NF if:</p>
+            <ul>
+                <li>It is in 1NF</li>
+                <li>No partial dependencies (non-key attributes depend on the entire primary key)</li>
+            </ul>
+            <p><strong>Elimination:</strong> Remove partial dependencies by creating separate tables.</p>
+
+            <h5>5.4.3 Third Normal Form (3NF)</h5>
+            <p>A relation is in 3NF if:</p>
+            <ul>
+                <li>It is in 2NF</li>
+                <li>No transitive dependencies (non-key attributes don't depend on other non-key attributes)</li>
+            </ul>
+            <p><strong>Example:</strong> If A → B and B → C, then A → C is transitive dependency.</p>
+
+            <h5>5.4.4 Boyce-Codd Normal Form (BCNF)</h5>
+            <p>A relation is in BCNF if:</p>
+            <ul>
+                <li>It is in 3NF</li>
+                <li>For every FD A → B, A is a superkey</li>
+            </ul>
+            <p><strong>Difference from 3NF:</strong> BCNF is stricter and eliminates all redundancy caused by FDs.</p>
+
+            <h5>5.4.5 Fourth Normal Form (4NF)</h5>
+            <p>A relation is in 4NF if:</p>
+            <ul>
+                <li>It is in BCNF</li>
+                <li>No multivalued dependencies</li>
+            </ul>
+
+            <h5>5.4.6 Fifth Normal Form (5NF)</h5>
+            <p>A relation is in 5NF if it cannot be decomposed into smaller relations without loss of information. Also called Project-Join Normal Form (PJNF).</p>
+
+            <h4>5.5 Normalization Process</h4>
+            <ol>
+                <li>Identify all functional dependencies</li>
+                <li>Check each normal form violation</li>
+                <li>Decompose relations to eliminate violations</li>
+                <li>Ensure decomposition is lossless and dependency preserving</li>
+            </ol>
+
+            <h4>5.6 Lossless Join Decomposition</h4>
+            <p>A decomposition is lossless if the natural join of the decomposed relations gives back the original relation without any extra tuples.</p>
+            <p><strong>Test:</strong> Check if the common attributes form a key in at least one of the decomposed relations.</p>
+
+            <h4>5.7 Dependency Preservation</h4>
+            <p>A decomposition preserves dependencies if all functional dependencies can be checked without joining the relations.</p>
+            <p><strong>Algorithm:</strong> Check if each FD is preserved in at least one decomposed relation.</p>
+
+            <h4>5.8 Denormalization</h4>
+            <p>Intentionally introducing redundancy to improve query performance. Used when read operations are more frequent than write operations.</p>
+
+            <p><strong>Normal Forms:</strong> 1NF, 2NF, 3NF, BCNF, 4NF, 5NF</p>
+            <p><strong>Functional Dependencies:</strong> Partial, transitive, multivalued dependencies</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Decompose tables to BCNF</li>
+                <li>Identify normalization violations</li>
+                <li>Lossless join decomposition</li>
+                <li>Dependency preservation</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 7-8: Transaction Management</h3>
+        <div class="chapter-content">
+            <h4>7.1 Introduction to Transactions</h4>
+            <p>A transaction is a logical unit of work that contains one or more SQL statements. Transactions ensure data consistency and integrity in a multi-user environment.</p>
+
+            <h4>7.2 ACID Properties</h4>
+            <p>ACID properties ensure reliable transaction processing:</p>
+            <ul>
+                <li><strong>Atomicity:</strong> All operations in a transaction succeed or none do. "All or nothing" principle.</li>
+                <li><strong>Consistency:</strong> Transaction brings database from one consistent state to another.</li>
+                <li><strong>Isolation:</strong> Concurrent transactions don't interfere with each other.</li>
+                <li><strong>Durability:</strong> Changes made by committed transaction persist even in case of system failure.</li>
+            </ul>
+
+            <h4>7.3 Transaction States</h4>
+            <ul>
+                <li><strong>Active:</strong> Transaction is executing</li>
+                <li><strong>Partially Committed:</strong> Last statement executed, before commit</li>
+                <li><strong>Committed:</strong> Transaction completed successfully</li>
+                <li><strong>Failed:</strong> Transaction failed and cannot proceed</li>
+                <li><strong>Aborted:</strong> Transaction rolled back due to failure</li>
+            </ul>
+
+            <h4>7.4 Transaction Operations</h4>
+            <ul>
+                <li><strong>COMMIT:</strong> Make transaction changes permanent</li>
+                <li><strong>ROLLBACK:</strong> Undo all changes made by transaction</li>
+                <li><strong>SAVEPOINT:</strong> Create a point to which transaction can rollback</li>
+            </ul>
+
+            <h4>7.5 Concurrency Control</h4>
+            <p>Concurrency control ensures correct execution of concurrent transactions. Problems without concurrency control:</p>
+            <ul>
+                <li><strong>Lost Update:</strong> One transaction's update is overwritten by another</li>
+                <li><strong>Dirty Read:</strong> Reading uncommitted data that may be rolled back</li>
+                <li><strong>Non-repeatable Read:</strong> Reading the same data gives different values</li>
+                <li><strong>Phantom Read:</strong> New records appear in subsequent reads</li>
+            </ul>
+
+            <h4>7.6 Serializability</h4>
+            <p>A schedule is serializable if it is equivalent to some serial execution of the transactions.</p>
+            <ul>
+                <li><strong>Conflict Serializability:</strong> Based on conflicting operations</li>
+                <li><strong>View Serializability:</strong> Based on the view of data seen by transactions</li>
+            </ul>
+
+            <h4>7.7 Concurrency Control Protocols</h4>
+
+            <h5>7.7.1 Lock-Based Protocols</h5>
+            <ul>
+                <li><strong>Two-Phase Locking (2PL):</strong></li>
+                <ul>
+                    <li>Growing Phase: Acquire locks, no release</li>
+                    <li>Shrinking Phase: Release locks, no acquire</li>
+                </ul>
+                <li><strong>Types of Locks:</strong></li>
+                <ul>
+                    <li>Shared Lock (S): Read access</li>
+                    <li>Exclusive Lock (X): Write access</li>
+                </ul>
+            </ul>
+
+            <h5>7.7.2 Timestamp-Based Protocols</h5>
+            <p>Each transaction has a timestamp. Operations are ordered by timestamp.</p>
+            <ul>
+                <li><strong>Thomas Write Rule:</strong> Ignore obsolete writes</li>
+            </ul>
+
+            <h5>7.7.3 Optimistic Protocols</h5>
+            <p>Assume no conflicts, validate at commit time.</p>
+            <ul>
+                <li>Read Phase</li>
+                <li>Validation Phase</li>
+                <li>Write Phase</li>
+            </ul>
+
+            <h4>7.8 Deadlock</h4>
+            <p>A deadlock occurs when two or more transactions are waiting for each other to release locks.</p>
+
+            <h4>7.9 Deadlock Prevention</h4>
+            <ul>
+                <li><strong>Wait-Die:</strong> Older transaction waits, younger dies</li>
+                <li><strong>Wound-Wait:</strong> Older transaction wounds (aborts) younger, younger waits</li>
+            </ul>
+
+            <h4>7.10 Deadlock Detection and Recovery</h4>
+            <ul>
+                <li><strong>Detection:</strong> Use wait-for graph, cycle indicates deadlock</li>
+                <li><strong>Recovery:</strong> Abort transactions to break cycle, select victim based on cost</li>
+            </ul>
+
+            <h4>7.11 Database Recovery</h4>
+            <p>Recovery ensures database consistency after failures.</p>
+
+            <h4>7.12 Types of Failures</h4>
+            <ul>
+                <li><strong>Transaction Failure:</strong> Logical errors, deadlock</li>
+                <li><strong>System Failure:</strong> Power outage, OS crash</li>
+                <li><strong>Media Failure:</strong> Disk crash</li>
+            </ul>
+
+            <h4>7.13 Recovery Techniques</h4>
+            <ul>
+                <li><strong>Log-Based Recovery:</strong> Maintain log of all changes</li>
+                <li><strong>Deferred Update:</strong> Write changes to log first, update database later</li>
+                <li><strong>Immediate Update:</strong> Update database immediately, log changes</li>
+                <li><strong>Shadow Paging:</strong> Maintain shadow page table</li>
+            </ul>
+
+            <h4>7.14 ARIES Algorithm</h4>
+            <p>ARIES (Algorithm for Recovery and Isolation Exploiting Semantics) is a recovery algorithm that combines:</p>
+            <ul>
+                <li>Write-ahead logging</li>
+                <li>Repeating history during redo</li>
+                <li>Logging changes during undo</li>
+            </ul>
+
+            <p><strong>ACID Properties:</strong> Atomicity, Consistency, Isolation, Durability</p>
+            <p><strong>Concurrency Control:</strong> 2PL, Timestamp ordering, Optimistic protocols</p>
+            <p><strong>Recovery:</strong> Log-based recovery, ARIES algorithm</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Schedule serializability analysis</li>
+                <li>Deadlock detection and prevention</li>
+                <li>Log file analysis for recovery</li>
+            </ul>
+        </div>
+
+        <h3>Chapter 9-10: Indexing & Query Processing</h3>
+        <div class="chapter-content">
+            <h4>9.1 Introduction to Indexing</h4>
+            <p>Indexing is a data structure technique that allows for faster data retrieval. An index is a copy of selected columns from a table that can be searched efficiently.</p>
+
+            <h4>9.2 Types of Indexes</h4>
+
+            <h5>9.2.1 Ordered Indexes</h5>
+            <ul>
+                <li><strong>Primary Index:</strong> Built on primary key, dense or sparse</li>
+                <li><strong>Secondary Index:</strong> Built on non-key attributes</li>
+                <li><strong>Clustering Index:</strong> Index entries point to blocks, not individual records</li>
+            </ul>
+
+            <h5>9.2.2 B-Tree Index</h5>
+            <p>B-Tree is a balanced search tree that maintains sorted data and allows searches, insertions, and deletions in logarithmic time.</p>
+            <ul>
+                <li>All leaves at same level</li>
+                <li>Nodes have minimum and maximum number of keys</li>
+                <li>Efficient for disk-based storage</li>
+            </ul>
+
+            <h5>9.2.3 B+-Tree Index</h5>
+            <p>Variant of B-Tree where all values are stored in leaf nodes, and internal nodes contain only keys for navigation.</p>
+            <ul>
+                <li>Leaf nodes are linked for range queries</li>
+                <li>All data in leaves, internal nodes for routing</li>
+                <li>Better for range queries than B-Tree</li>
+            </ul>
+
+            <h5>9.2.4 Hash Index</h5>
+            <p>Uses hash function to map keys to bucket addresses.</p>
+            <ul>
+                <li>O(1) average search time</li>
+                <li>Not suitable for range queries</li>
+                <li>Static and dynamic hashing</li>
+            </ul>
+
+            <h4>9.3 Index Selection</h4>
+            <p>Factors to consider:</p>
+            <ul>
+                <li>Access type (point query, range query)</li>
+                <li>Access time</li>
+                <li>Insertion time</li>
+                <li>Deletion time</li>
+                <li>Space overhead</li>
+            </ul>
+
+            <h4>9.4 Query Processing</h4>
+            <p>Query processing involves translating a high-level query into low-level operations that can be executed by the database engine.</p>
+
+            <h4>9.5 Steps in Query Processing</h4>
+            <ol>
+                <li>Parsing and translation</li>
+                <li>Optimization</li>
+                <li>Evaluation</li>
+            </ol>
+
+            <h4>9.6 Query Optimization</h4>
+            <p>Query optimization finds the most efficient execution plan for a query.</p>
+
+            <h4>9.7 Cost Estimation</h4>
+            <ul>
+                <li><strong>Access Cost:</strong> Cost of accessing data from disk</li>
+                <li><strong>CPU Cost:</strong> Cost of performing operations in memory</li>
+                <li><strong>Communication Cost:</strong> Cost of transferring data in distributed systems</li>
+            </ul>
+
+            <h4>9.8 Query Execution Plans</h4>
+            <p>A query execution plan shows the sequence of operations to execute a query.</p>
+            <ul>
+                <li>Selection operations</li>
+                <li>Join operations</li>
+                <li>Sort operations</li>
+                <li>Projection operations</li>
+            </ul>
+
+            <h4>9.9 Join Algorithms</h4>
+            <ul>
+                <li><strong>Nested Loop Join:</strong> For each tuple in R, scan S</li>
+                <li><strong>Sort-Merge Join:</strong> Sort both relations, merge</li>
+                <li><strong>Hash Join:</strong> Hash both relations, join partitions</li>
+                <li><strong>Index Join:</strong> Use index on join attribute</li>
+            </ul>
+
+            <h4>9.10 Query Optimization Techniques</h4>
+            <ul>
+                <li><strong>Equivalent Query Transformations:</strong> Convert query to equivalent but more efficient form</li>
+                <li><strong>Selection Pushdown:</strong> Apply selections as early as possible</li>
+                <li><strong>Join Ordering:</strong> Choose optimal order for multiple joins</li>
+                <li><strong>Use of Indexes:</strong> Choose appropriate indexes for query predicates</li>
+            </ul>
+
+            <h4>9.11 Materialized Views</h4>
+            <p>Pre-computed results of queries stored as tables. Used to speed up complex queries at the cost of storage and maintenance overhead.</p>
+
+            <h4>9.12 Query Processing in Distributed Databases</h4>
+            <ul>
+                <li>Fragmentation and allocation</li>
+                <li>Distributed query optimization</li>
+                <li>Semijoin and bloomjoin techniques</li>
+            </ul>
+
+            <p><strong>Indexing:</strong> B-Tree, B+-Tree, Hash indexing</p>
+            <p><strong>Query Optimization:</strong> Cost estimation, query plans, join algorithms</p>
+            <h4>Practice Exercises:</h4>
+            <ul>
+                <li>Compare different indexing techniques</li>
+                <li>Analyze query execution plans</li>
+                <li>Optimize slow queries</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>DBMS reference for BSc CS 2nd year - Pune University.</p>
+    </footer>
+</body>
+</html>
