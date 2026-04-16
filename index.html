@@ -101,6 +101,40 @@ const toggleAuth = document.getElementById("toggle-auth");
 const logoutBtn = document.getElementById("logout-btn");
 
 let registerMode = false;
+const apiBase = (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost")
+    ? "http://127.0.0.1:5000"
+    : null;
+
+function getStoredUsers() {
+    try {
+        return JSON.parse(localStorage.getItem("library_users") || "{}");
+    } catch {
+        return {};
+    }
+}
+
+function setStoredUsers(users) {
+    localStorage.setItem("library_users", JSON.stringify(users));
+}
+
+function localAuth(username, password, isRegister) {
+    const users = getStoredUsers();
+
+    if (isRegister) {
+        if (users[username]) {
+            return { ok: false, message: "User already exists" };
+        }
+        users[username] = password;
+        setStoredUsers(users);
+        return { ok: true, message: "success" };
+    }
+
+    if (users[username] && users[username] === password) {
+        return { ok: true, message: "success" };
+    }
+
+    return { ok: false, message: "Invalid login" };
+}
 
 // ✅ SHOW LIBRARY
 function showApp(username) {
@@ -133,10 +167,26 @@ form.addEventListener("submit", async function(e){
 
     const username = usernameInput.value.trim();
     const password = passwordInput.value;
+    errorMsg.textContent = "";
+
+    if (!username || !password) {
+        errorMsg.textContent = "Username and password required";
+        return;
+    }
+
+    if (!apiBase) {
+        const result = localAuth(username, password, registerMode);
+        if (result.ok) {
+            showApp(username);
+        } else {
+            errorMsg.textContent = result.message;
+        }
+        return;
+    }
 
     const url = registerMode 
-        ? "http://127.0.0.1:5000/signup"
-        : "http://127.0.0.1:5000/login";
+        ? apiBase + "/signup"
+        : apiBase + "/login";
 
     try {
         const res = await fetch(url, {
