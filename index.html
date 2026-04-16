@@ -2,203 +2,192 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Library</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="top-nav">
-        <div class="logo">Pune University BSc CS 2nd Year</div>
-        <div class="tagline">Modern Library with syllabus & resources</div>
-    </nav>
 
-    <main>
+<!-- LOGIN OVERLAY -->
+<div id="login-overlay" class="overlay">
+    <div class="overlay-content">
+        <h2>Welcome to Online Library</h2>
+        <p>Please login to continue.</p>
 
-    <!-- HOME SECTION -->
-    <section class="home">
+        <div id="error-msg" style="color:red;"></div>
+
+        <form id="auth-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" id="login-btn">Login</button>
+        </form>
+
+        <p id="toggle-auth" style="cursor:pointer;">New user? Register</p>
+    </div>
+</div>
+
+<!-- LOGOUT BUTTON -->
+<button onclick="logout()" id="logout-btn" class="logout-button">
+🚪 Logout
+</button>
+
+<!-- MAIN LIBRARY (YOUR CONTENT SAME) -->
+<main id="app-content" class="hidden">
+
+    <div class="library-header">
         <h1>📚 Online Access Library</h1>
-        <p>Read and explore books anytime, anywhere - specially tailored for BSc CS Pune University second year.</p>
-    </section>
-
-    <!-- CATEGORIES -->
-    <section class="categories">
-        <button data-category="all">All</button>
-        <button data-category="computer-science">Computer Science</button>
-        <button data-category="history">History</button>
-        <button data-category="science">Science</button>
-    </section>
-
-    <section class="search-bar">
-        <input id="search-input" type="text" placeholder="🔍 Search by subject or topic..." aria-label="Search subjects">
-    </section>
-
-    <!-- COMPUTER SCIENCE -->
-    <h2>💻 Computer Science</h2>
-    <div class="book-container" id="computer-science">
-        
-
-        <div class="book-card" data-category="computer-science">
-            <h3>Data Structure</h3>
-            <p>Syllabus/snippets for Pune University:</p>
-            <ul>
-                <li>Arrays, Linked List, Stack, Queue, Tree, Graph</li>
-                <li>Algorithm analysis, Search, Sorting, Recursion</li>
-                <li>Study resources: GeeksforGeeks DS notes, CLRS (chapters 10-14)</li>
-            </ul>
-            <a class="read-link" href="ds.html" aria-label="Read Data Structure book">Open</a>
-        </div>
-
-        <div class="book-card" data-category="computer-science">
-            <h3>DBMS</h3>
-            <p>SQL, Transactions, Normalization</p>
-            <ul>
-                <li>ER modeling, Relational algebra, SQL queries</li>
-                <li>Normal forms, Concurrency control, Recovery</li>
-                <li>Study resources: `Database System Concepts` (Korth), DBMS lab</li>
-            </ul>
-            <a class="read-link" href="dbms.html" aria-label="DBMS resources">Open</a>
-        </div>
-
-        <div class="book-card" data-category="computer-science">
-            <h3>Software Engineering</h3>
-            <p>SDLC, Testing, Models</p>
-            <ul>
-                <li>Requirements engineering, UML, design patterns</li>
-                <li>Agile, Waterfall, V-model, Quality assurance</li>
-                <li>Study resources: Ian Sommerville, Pune Univ notes</li>
-            </ul>
-            <a class="read-link" href="se.html" aria-label="Software Engineering resources">Open</a>
-        </div>
-
-        <div class="book-card" data-category="computer-science">
-            <h3>Operating System</h3>
-            <p>Process, Memory, Scheduling</p>
-            <ul>
-                <li>Process management, Threads, Scheduling algorithms</li>
-                <li>Memory management, Paging, Virtual memory</li>
-                <li>Study materials: OS Concepts (Silberschatz) & lab manuals</li>
-            </ul>
-            <a class="read-link" href="os.html" aria-label="Operating System resources">Open</a>
-        </div>
-
+        <p id="welcome-text"></p>
     </div>
 
-    <!-- HISTORY -->
-    <h2>🏛️ History</h2>
-    <div class="book-container" id="history">
-
-        <div class="book-card" data-category="history">
-            <h3>Indian History</h3>
-            <p>Ancient to Modern India</p>
-            <ul>
-                <li>Harappan civilization, Vedic age, Maurya/Gupta empires</li>
-                <li>Medieval dynasties, Mughal era, Colonial period</li>
-                <li>Study resources: NCERT History, Pune University notes</li>
-            </ul>
-            <a class="read-link" href="#" aria-label="Indian History resources">Open</a>
+    <div class="library-section">
+        <h2>💻 Computer Science</h2>
+        <div class="book-grid">
+            <div class="book-card" style="border-left: 4px solid #3498db;">
+                <div class="book-icon">💾</div>
+                <a href="ds.html">Data Structure</a>
+                <p class="book-desc">Learn about arrays, linked lists, trees & graphs</p>
+            </div>
+            <div class="book-card" style="border-left: 4px solid #e74c3c;">
+                <div class="book-icon">🗄️</div>
+                <a href="dbms.html">DBMS</a>
+                <p class="book-desc">Database management systems & SQL</p>
+            </div>
+            <div class="book-card" style="border-left: 4px solid #2ecc71;">
+                <div class="book-icon">⚙️</div>
+                <a href="os.html">Operating System</a>
+                <p class="book-desc">Process management, memory & scheduling</p>
+            </div>
+            <div class="book-card" style="border-left: 4px solid #f39c12;">
+                <div class="book-icon">🏗️</div>
+                <a href="se.html">Software Engineering</a>
+                <p class="book-desc">Design patterns, SDLC & best practices</p>
+            </div>
         </div>
-
-        <div class="book-card" data-category="history">
-            <h3>World History</h3>
-            <p>Major global events</p>
-            <ul>
-                <li>Renaissance, Industrial Revolution, World Wars</li>
-                <li>Cold War, Decolonization, Globalization</li>
-                <li>Study resources: World history text, podcasts</li>
-            </ul>
-            <a class="read-link" href="#" aria-label="World History resources">Open</a>
-        </div>
-
-        <div class="book-card" data-category="history">
-            <h3>Freedom Fighters</h3>
-            <p>Leaders of Independence</p>
-            <ul>
-                <li>Gandhi, Nehru, Subhash Chandra Bose, Bhagat Singh</li>
-                <li>Regional leaders, revolutionary movements</li>
-                <li>Study resources: biographies, lecture notes</li>
-            </ul>
-            <a class="read-link" href="#" aria-label="Freedom Fighters resources">Open</a>
-        </div>
-
     </div>
 
-    <!-- SCIENCE -->
-    <h2>🔬 Science</h2>
-    <div class="book-container" id="science">
-
-        <div class="book-card" data-category="science">
-            <h3>Physics</h3>
-            <p>Motion, Energy, Laws</p>
-            <ul>
-                <li>Mechanics, Waves, Optics, Thermodynamics</li>
-                <li>Study resources: NCERT + practical manuals</li>
-            </ul>
-            <a class="read-link" href="#" aria-label="Physics resources">Open</a>
+    <div class="library-section">
+        <h2>⚖️ Law / LLB</h2>
+        <div class="book-grid">
+            <div class="book-card" style="border-left: 4px solid #8e44ad;">
+                <div class="book-icon">📘</div>
+                <a href="llb.html#constitutional">Constitutional Law</a>
+                <p class="book-desc">Fundamental rights, directive principles, and constitutional framework</p>
+            </div>
+            <div class="book-card" style="border-left: 4px solid #16a085;">
+                <div class="book-icon">📝</div>
+                <a href="llb.html#contract">Contract Law</a>
+                <p class="book-desc">Offer, acceptance, consideration, breach, and legal remedies</p>
+            </div>
+            <div class="book-card" style="border-left: 4px solid #c0392b;">
+                <div class="book-icon">⚖️</div>
+                <a href="llb.html#criminal">Criminal Law</a>
+                <p class="book-desc">Offences, punishments, and criminal procedure basics</p>
+            </div>
+            <div class="book-card" style="border-left: 4px solid #f39c12;">
+                <div class="book-icon">📚</div>
+                <a href="llb.html#jurisprudence">Jurisprudence</a>
+                <p class="book-desc">Schools of legal thought and theory of law</p>
+            </div>
         </div>
-
-        <div class="book-card" data-category="science">
-            <h3>Chemistry</h3>
-            <p>Atoms, Reactions</p>
-            <ul>
-                <li>Inorganic, Organic, Physical chemistry topics</li>
-                <li>Study resources: NCERT + lab notes</li>
-            </ul>
-            <a class="read-link" href="#" aria-label="Chemistry resources">Open</a>
-        </div>
-
-        <div class="book-card" data-category="science">
-            <h3>Biology</h3>
-            <p>Human body, Plants</p>
-            <ul>
-                <li>Cell biology, Genetics, Ecology, Physiology</li>
-                <li>Study resources: NCERT + reference books</li>
-            </ul>
-            <a class="read-link" href="#" aria-label="Biology resources">Open</a>
-        </div>
-
     </div>
 
-    </main>
+</main>
 
-    <footer class="site-footer">
-        <p>Designed for BSc CS 2nd year students (Pune University) — syllabus and resources update 2026.</p>
-    </footer>
+<script>
+const form = document.getElementById("auth-form");
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const errorMsg = document.getElementById("error-msg");
+const toggleAuth = document.getElementById("toggle-auth");
+const logoutBtn = document.getElementById("logout-btn");
 
-    <script>
-        const categoryButtons = document.querySelectorAll('.categories button');
-        const cards = document.querySelectorAll('.book-card');
-        const searchInput = document.getElementById('search-input');
+let registerMode = false;
 
-        let currentCategory = 'all';
-        let searchQuery = '';
+// ✅ SHOW LIBRARY
+function showApp(username) {
+    document.getElementById("login-overlay").style.display = "none";
 
-        function applyFilters() {
-            cards.forEach(card => {
-                const subject = card.querySelector('h3').textContent.toLowerCase();
-                const category = card.dataset.category;
-                const matchesCategory = currentCategory === 'all' || category === currentCategory;
-                const matchesSearch = !searchQuery || subject.includes(searchQuery);
-                card.style.display = (matchesCategory && matchesSearch) ? 'block' : 'none';
-            });
+    const app = document.getElementById("app-content");
+    app.classList.remove("hidden");
+    app.style.display = "block";
+
+    logoutBtn.style.display = "block";
+
+    localStorage.setItem("user", username);
+
+    document.getElementById("welcome-text").innerText = "Welcome, " + username;
+}
+
+// ✅ SHOW LOGIN
+function showLogin() {
+    document.getElementById("login-overlay").style.display = "flex";
+
+    const app = document.getElementById("app-content");
+    app.classList.add("hidden");
+
+    logoutBtn.style.display = "none";
+}
+
+// ✅ LOGIN / REGISTER
+form.addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value;
+
+    const url = registerMode 
+        ? "http://127.0.0.1:5000/signup"
+        : "http://127.0.0.1:5000/login";
+
+    try {
+        const res = await fetch(url, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ username, password })
+        });
+
+        const data = await res.json();
+
+        if (data.message.toLowerCase().includes("success")) {
+            showApp(username);
+        } else {
+            errorMsg.textContent = data.message;
         }
 
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                currentCategory = button.dataset.category;
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                applyFilters();
-            });
-        });
+    } catch (err) {
+        console.error("Request error:", err);
+        errorMsg.textContent = "Server error - Make sure Flask is running on http://127.0.0.1:5000";
+    }
+});
 
-        searchInput.addEventListener('input', () => {
-            searchQuery = searchInput.value.trim().toLowerCase();
-            applyFilters();
-        });
+// ✅ TOGGLE LOGIN/REGISTER
+toggleAuth.addEventListener("click", () => {
+    registerMode = !registerMode;
 
-        document.querySelector('.categories button[data-category="all"]').click();
+    toggleAuth.textContent = registerMode
+        ? "Already have account? Login"
+        : "New user? Register";
 
-    </script>
+    document.getElementById("login-btn").textContent =
+        registerMode ? "Register" : "Login";
+});
+
+// ✅ LOGOUT FUNCTION
+function logout() {
+    localStorage.removeItem("user");
+    showLogin();
+}
+
+// ✅ AUTO LOGIN
+window.onload = function() {
+    const user = localStorage.getItem("user");
+
+    if (user) {
+        showApp(user);
+    } else {
+        showLogin();
+    }
+};
+</script>
 
 </body>
 </html>
